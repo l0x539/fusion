@@ -5,7 +5,7 @@ import { transitionFragmentShader } from '@/utils/shaders/fragmentShaders';
 import { wrapEffect } from '@react-three/postprocessing';
 
 // Effect implementation
-class TransitionEffectImpl extends Effect {
+export class TransitionEffectImpl extends Effect {
   time: number;
   u_fromScene: Texture;
   u_toScene: Texture;

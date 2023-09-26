@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useSpring } from "@react-spring/three";
 import { useEffect, useRef, useState } from "react";
 import { PerspectiveCamera, Texture } from "three";
-import TransitionEffect from "./TransitionEffect";
+import TransitionEffect, { TransitionEffectImpl } from "./TransitionEffect";
 import { Effect } from 'postprocessing'
 import { EffectComposer } from "@react-three/postprocessing";
 import { getGPUTier } from "detect-gpu";
@@ -21,7 +21,7 @@ const HomeEffects = () => {
   const pathname = usePathname();
   const {gl} = useThree();
   const camRef = useRef<PerspectiveCamera>(null)
-  const transRef = useRef<Effect>(null);
+  const transRef = useRef<typeof TransitionEffectImpl & Effect>(null);
 
   const { progressSpring } = useSpring({
     progressSpring: pathname.startsWith('/services/') ? 0 : 1,
