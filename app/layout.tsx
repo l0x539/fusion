@@ -56,8 +56,8 @@ const helvetica = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Kansha',
-  description: 'Kansha Lab Website',
+  title: 'Fusion',
+  description: 'Fusion Lab Website',
 }
 
 export default function RootLayout({

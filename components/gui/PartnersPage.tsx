@@ -158,12 +158,12 @@ export const Footer: FC<{
           <ul className="">
             <li className="mb-1">
               <FooterLink href={'/services'}>
-                Contact@kanshalab.com
+                Contact@fusion.bi
               </FooterLink>
             </li>
             <li className="mb-1">
               <FooterLink href={'/culture'}>
-                info@kanshalab.com
+                info@fusion.bi
               </FooterLink>
             </li>
             <li className="mb-1 text-[#5E5E5E] mt-6">
@@ -176,12 +176,12 @@ export const Footer: FC<{
           <ul className="">
             <li className="mb-1">
               <FooterLink href={'/services'}>
-                Contact@kanshalab.com
+                Contact@fusion.bi
               </FooterLink>
             </li>
             <li className="mb-1">
               <FooterLink href={'/culture'}>
-                info@kanshalab.com
+                info@fusion.bi
               </FooterLink>
             </li>
             <li className="mb-1 text-[#5E5E5E] mt-6">

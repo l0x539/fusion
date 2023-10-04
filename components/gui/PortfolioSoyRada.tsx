@@ -45,7 +45,7 @@ const PortfolioSoyRada = () => {
                 src={"/assets/images/soyrada_mobiles.png"}
                 width={713}
                 height={895.369}
-                alt="SoyRada Mobiles preview main view by Kansha"
+                alt="SoyRada Mobiles preview main view by Fusion"
               />
             </div>
             <div>
@@ -64,14 +64,14 @@ const PortfolioSoyRada = () => {
                     src={"/assets/images/soyrada_app_header.png?qsd"}
                     width={347}
                     height={51.871}
-                    alt="SoyRada App header by Kansha"
+                    alt="SoyRada App header by Fusion"
                   />
                   <div className="mt-14">
                     <Image
                       src={"/assets/images/soyrada_tutorial_button.png"}
                       width={177}
                       height={38.618}
-                      alt="SoyRada Tutorial button by Kansha"
+                      alt="SoyRada Tutorial button by Fusion"
                     />
                   </div>
                 </div>
@@ -87,7 +87,7 @@ const PortfolioSoyRada = () => {
                 src={"/assets/images/soyrada_desktop_bg.png"}
                 width={1447}
                 height={1137}
-                alt="SoyRada Desktop preview by Kansha"
+                alt="SoyRada Desktop preview by Fusion"
               /> 
               :
               <Image
@@ -95,7 +95,7 @@ const PortfolioSoyRada = () => {
                 src={"/assets/images/soyrada_desktop.png"}
                 width={1447}
                 height={921.691}
-                alt="SoyRada Desktop preview by Kansha"
+                alt="SoyRada Desktop preview by Fusion"
               />
             }
           </div>
@@ -109,7 +109,7 @@ const PortfolioSoyRada = () => {
                   #24017D
                   71, 99, 0, 51
                   36, 1, 125
-                  ) color palette by Kansha"
+                  ) color palette by Fusion"
               />
               <div>
                 <Image
@@ -120,7 +120,7 @@ const PortfolioSoyRada = () => {
                     #E00081
                     0, 100, 42, 12
                     224, 0, 129
-                    ) color palette by Kansha"
+                    ) color palette by Fusion"
                 />
                 <Image
                   src={"/assets/images/soyrada_gradient3.png"}
@@ -130,7 +130,7 @@ const PortfolioSoyRada = () => {
                     #24017D
                     71, 99, 0, 51
                     36, 1, 125
-                    ) color palette by Kansha"
+                    ) color palette by Fusion"
                 />
               </div>
               <div>
@@ -142,7 +142,7 @@ const PortfolioSoyRada = () => {
                     #7C58E0
                     45, 61, 0, 12
                     124, 88, 224
-                    ) color palette by Kansha"
+                    ) color palette by Fusion"
                 />
                 <Image
                   src={"/assets/images/soyrada_gradient5.png"}
@@ -152,7 +152,7 @@ const PortfolioSoyRada = () => {
                     #24017D
                     71, 99, 0, 51
                     36, 1, 125
-                    ) color palette by Kansha"
+                    ) color palette by Fusion"
                 />
                 <Image
                   src={"/assets/images/soyrada_gradient6.png"}
@@ -162,7 +162,7 @@ const PortfolioSoyRada = () => {
                     #24017D
                     71, 99, 0, 51
                     36, 1, 125
-                    ) color palette by Kansha"
+                    ) color palette by Fusion"
                 />
               </div>
             </div>
@@ -191,7 +191,7 @@ const PortfolioSoyRada = () => {
               src="/assets/images/soyrada_app_view.png"
               width={635}
               height={1063.754}
-              alt="Soyrada Mobile Class App view by Kansha"
+              alt="Soyrada Mobile Class App view by Fusion"
             />
             <div>
               <div className="flex gap-2.5">
@@ -199,13 +199,13 @@ const PortfolioSoyRada = () => {
                   src="/assets/images/soyrada_video1.png"
                   width={461}
                   height={320}
-                  alt="Soyrada Magica Video by Kansha"
+                  alt="Soyrada Magica Video by Fusion"
                 />
                 <Image
                   src="/assets/images/soyrada_video2.png"
                   width={461}
                   height={320}
-                  alt="Soyrada Magica Video by Kansha"
+                  alt="Soyrada Magica Video by Fusion"
                 />
               </div>
               <p className="text-white text-lg leading-[normal] ml-16 mt-40">
@@ -287,7 +287,7 @@ const PortfolioSoyRada = () => {
                 src="/assets/images/soyrada_mobile_desktop.png"
                 width={919}
                 height={798.641}
-                alt="Soyrada Mobile And Phone Image by Kansha"
+                alt="Soyrada Mobile And Phone Image by Fusion"
               />
             </div>
           </div>
@@ -296,7 +296,7 @@ const PortfolioSoyRada = () => {
               src="/assets/images/soyrada_mobile_tutorial.png"
               width={592}
               height={753}
-              alt="Soyrada App on two Mobiles showing tutorial by Kansha"
+              alt="Soyrada App on two Mobiles showing tutorial by Fusion"
             />
             <div className="w-full flex flex-col">
               <p className="text-white text-lg leading-[normal]">
@@ -313,13 +313,13 @@ const PortfolioSoyRada = () => {
                   src="/assets/images/soyrada_class.png"
                   width={296.}
                   height={300}
-                  alt="Soyrada Class by Kansha"
+                  alt="Soyrada Class by Fusion"
                 />
                 <Image
                   src="/assets/images/soyrada_dejugar.png"
                   width={296}
                   height={300}
-                  alt="Soyrada Class by Kansha"
+                  alt="Soyrada Class by Fusion"
                 />
               </div>
             </div>
@@ -331,13 +331,13 @@ const PortfolioSoyRada = () => {
                   src="/assets/images/soyrada_trailer.png"
                   width={469}
                   height={411}
-                  alt="Soyrada Trailer by Kansha"
+                  alt="Soyrada Trailer by Fusion"
                 />
                 <Image
                   src="/assets/images/soyrada_podcast.png"
                   width={592.}
                   height={411}
-                  alt="Soyrada Podcast by Kansha"
+                  alt="Soyrada Podcast by Fusion"
                 />
               </div>
               <div className="flex gap-5">
@@ -346,26 +346,26 @@ const PortfolioSoyRada = () => {
                     src="/assets/images/soyrada_class1.png"
                     width={212.}
                     height={177}
-                    alt="Soyrada Class one by Kansha"
+                    alt="Soyrada Class one by Fusion"
                   />
                   <Image
                     src="/assets/images/soyrada_class2.png"
                     width={212.}
                     height={177}
-                    alt="Soyrada Class one by Kansha"
+                    alt="Soyrada Class one by Fusion"
                   />
                 </div>
                 <Image
                   src="/assets/images/soyrada_card_tab.png"
                   width={489.}
                   height={360.461}
-                  alt="Soyrada tutorial card and menu by Kansha"
+                  alt="Soyrada tutorial card and menu by Fusion"
                 />
                 <Image
                   src="/assets/images/soyrada_pack.png"
                   width={347.}
                   height={367}
-                  alt="Soyrada Pack by Kansha"
+                  alt="Soyrada Pack by Fusion"
                 />
               </div>
             </div>
@@ -374,13 +374,13 @@ const PortfolioSoyRada = () => {
                 src="/assets/images/soyrada_telleva.png"
                 width={347}
                 height={260.427}
-                alt="Soyrada La Magia Telleva by Kansha"
+                alt="Soyrada La Magia Telleva by Fusion"
               />
               <Image
                 src="/assets/images/soyrada_tablet.png"
                 width={347}
                 height={516}
-                alt="Soyrada Tablet view by Kansha"
+                alt="Soyrada Tablet view by Fusion"
               />
             </div>
           </div>
@@ -400,7 +400,7 @@ const PortfolioSoyRada = () => {
               src={"/assets/images/soyrada_footer_banner.png"}
               width={1765}
               height={457.593}
-              alt="SoyRada footer banner by Kansha"
+              alt="SoyRada footer banner by Fusion"
             />
           </div>
         </div>

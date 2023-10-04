@@ -5,7 +5,7 @@ const Footer = () => {
     <ul>
       <li>
         <FooterLink href="mailto:fusion.devlopment@gmail.com">
-          Contact@fusion.com
+          Contact@fusion.bi
         </FooterLink>
       </li>
       <li>

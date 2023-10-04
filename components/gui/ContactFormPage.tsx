@@ -47,8 +47,8 @@ const ContactFormPage = () => {
             </h5>
             <ul>
               <li>
-                <FooterLink type="secondary" href="mailto:kansha.lab@gmail.com">
-                  kansha.lab@gmail.com
+                <FooterLink type="secondary" href="mailto:fusion.lab@gmail.com">
+                  fusion.lab@gmail.com
                 </FooterLink>
               </li>
               <li>

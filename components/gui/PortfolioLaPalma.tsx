@@ -39,7 +39,7 @@ const PortfolioLaPalma = () => {
                 src={"/assets/images/lapalma_bg_balls.png"}
                 width={726.511}
                 height={623}
-                alt="LaPalma soccer balls background by Kansha"
+                alt="LaPalma soccer balls background by Fusion"
               />
             </div>
           </div>
@@ -48,14 +48,14 @@ const PortfolioLaPalma = () => {
               src={"/assets/images/lapalma_desktop.png"}
               width={1467}
               height={879}
-              alt="LaPalma Desktop preview by Kansha"
+              alt="LaPalma Desktop preview by Fusion"
             />
             <Image
               className="absolute top-80 right-32 shadow-[0px_3.2964px_206.02493px_32.96399px_rgba(0,_0,_0,_0.60)]"
               src={"/assets/images/lapalma_mobile.png?qsd"}
               width={308.213}
               height={595}
-              alt="LaPalma mobile preview by Kansha"
+              alt="LaPalma mobile preview by Fusion"
             />
           </div>
           <div className="mx-8 mt-56 grid grid-cols-2 gap-x-10">
@@ -65,7 +65,7 @@ const PortfolioLaPalma = () => {
                 src={"/assets/images/lapalma_web3.png"}
                 width={420.18}
                 height={489}
-                alt="LaPalma web3 by Kansha"
+                alt="LaPalma web3 by Fusion"
               />
             </div>
             <div className="flex justify-center">
@@ -74,7 +74,7 @@ const PortfolioLaPalma = () => {
                 src={"/assets/images/lapalma_selection.png"}
                 width={662}
                 height={502.35}
-                alt="LaPalma selection by Kansha"
+                alt="LaPalma selection by Fusion"
               />
             </div>
           </div>
@@ -97,35 +97,35 @@ const PortfolioLaPalma = () => {
                 src={"/assets/images/lapalma_card1.png"}
                 width={163}
                 height={292}
-                alt="LaPalma Card one by Kansha"
+                alt="LaPalma Card one by Fusion"
               />
               <Image
                 className="rounded-[0.875rem]"
                 src={"/assets/images/lapalma_card2.png"}
                 width={163}
                 height={292}
-                alt="LaPalma Card two by Kansha"
+                alt="LaPalma Card two by Fusion"
               />
               <Image
                 className="rounded-[0.875rem]"
                 src={"/assets/images/lapalma_card3.png"}
                 width={163}
                 height={292}
-                alt="LaPalma Card three by Kansha"
+                alt="LaPalma Card three by Fusion"
               />
               <Image
                 className="rounded-[0.875rem]"
                 src={"/assets/images/lapalma_card4.png"}
                 width={163}
                 height={292}
-                alt="LaPalma Card four by Kansha"
+                alt="LaPalma Card four by Fusion"
               />
               <Image
                 className="rounded-[0.875rem]"
                 src={"/assets/images/lapalma_card5.png"}
                 width={163}
                 height={292}
-                alt="LaPalma Card five by Kansha"
+                alt="LaPalma Card five by Fusion"
               />
             </div>
           </div>
@@ -135,7 +135,7 @@ const PortfolioLaPalma = () => {
               src={"/assets/images/lapalma_bg_balls.png"}
               width={726.511}
               height={623}
-              alt="LaPalma soccer balls background by Kansha"
+              alt="LaPalma soccer balls background by Fusion"
             />
           </div>
           <div className="mx-8">
@@ -143,7 +143,7 @@ const PortfolioLaPalma = () => {
               src={"/assets/images/lapalma_mobile_preview.png"}
               width={1448}
               height={898}
-              alt="LaPalma mobile preview banner by Kansha"
+              alt="LaPalma mobile preview banner by Fusion"
             />
           </div>
           <div className="mx-8 mt-16 grid grid-cols-2">
@@ -177,7 +177,7 @@ const PortfolioLaPalma = () => {
               src={"/assets/images/lapalma_long_banner.png"}
               width={1516}
               height={1671}
-              alt="LaPalma long banner by Kansha"
+              alt="LaPalma long banner by Fusion"
             />
           </div>
           <div className="mx-10 mt-[-2.9rem] flex justify-end">
@@ -205,13 +205,13 @@ const PortfolioLaPalma = () => {
                   src={"/assets/images/lapalma_thentball.png"}
                   width={469}
                   height={411}
-                  alt="LaPalma THE N TBALL by Kansha"
+                  alt="LaPalma THE N TBALL by Fusion"
                 />
                 <Image
                   src={"/assets/images/lapalma_newdefi.png"}
                   width={592}
                   height={411}
-                  alt="LaPalma the new dotball defi by Kansha"
+                  alt="LaPalma the new dotball defi by Fusion"
                 />
               </div>
               <div className="flex-inline flex gap-x-5">
@@ -219,14 +219,14 @@ const PortfolioLaPalma = () => {
                   src={"/assets/images/lapalma_universe.png"}
                   width={714}
                   height={367}
-                  alt="LaPalma universe by Kansha"
+                  alt="LaPalma universe by Fusion"
                 />
                 <div className="absolute w-[347px] flex justify-center bottom-0 right-0">
                   <Image
                     src={"/assets/images/lapalma_mobile_web3.png"}
                     width={282}
                     height={577.955}
-                    alt="LaPalma universe by Kansha"
+                    alt="LaPalma universe by Fusion"
                   />
                 </div>
               </div>
@@ -235,7 +235,7 @@ const PortfolioLaPalma = () => {
               src={"/assets/images/lapalma_mobile_long_preview.png"}
               width={282}
               height={577.955}
-              alt="LaPalma universe by Kansha"
+              alt="LaPalma universe by Fusion"
             />
           </div>
           <div className="mx-8 mt-14 grid grid-cols-2">
@@ -254,7 +254,7 @@ const PortfolioLaPalma = () => {
               src={"/assets/images/lapalma_footer_banner.png"}
               width={1765}
               height={457.593}
-              alt="LaPalma footer banner by Kansha"
+              alt="LaPalma footer banner by Fusion"
             />
           </div>
         </div>

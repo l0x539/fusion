@@ -71,7 +71,7 @@ const PortfolioCryptoMate = () => {
                   src={"/assets/images/cryptomate_page.png"}
                   width={836}
                   height={731.5}
-                  alt="CryptoMate Tab page by Kansha"
+                  alt="CryptoMate Tab page by Fusion"
                 />
               </div>
             </div>
@@ -81,7 +81,7 @@ const PortfolioCryptoMate = () => {
               src="/assets/images/cryptomate_pricing.png"
               width={977.103}
               height={782.445}
-              alt="CryptoMate pricing by Kansha"
+              alt="CryptoMate pricing by Fusion"
             />
           </div>
           <div className="mx-8 grid grid-cols-2 gap-y-7 mt-20">
@@ -91,7 +91,7 @@ const PortfolioCryptoMate = () => {
                   src="/assets/images/cryptomate_logo.png"
                   width={213.048}
                   height={176}
-                  alt="CryptoMate Logo by Kansha"
+                  alt="CryptoMate Logo by Fusion"
                 />
               </div>
               <Image
@@ -99,7 +99,7 @@ const PortfolioCryptoMate = () => {
                 src="/assets/images/cryptomate_brand_logo.png"
                 width={592}
                 height={411}
-                alt="CryptoMate Brand Logo by Kansha"
+                alt="CryptoMate Brand Logo by Fusion"
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -108,7 +108,7 @@ const PortfolioCryptoMate = () => {
                 src="/assets/images/cryptomate_logo_paths.png"
                 width={548}
                 height={568.926}
-                alt="CryptoMate Logo design paths and dimensions by Kansha"
+                alt="CryptoMate Logo design paths and dimensions by Fusion"
               />
             </div>
           </div>
@@ -158,31 +158,31 @@ const PortfolioCryptoMate = () => {
               src="/assets/images/cm_yellow.png"
               width={101}
               height={474}
-              alt="CryptoMate Yellow color by Kansha"
+              alt="CryptoMate Yellow color by Fusion"
             />
             <Image
               src="/assets/images/cm_blue.png"
               width={101}
               height={474}
-              alt="CryptoMate Blue color by Kansha"
+              alt="CryptoMate Blue color by Fusion"
             />
             <Image
               src="/assets/images/cm_purple.png"
               width={101}
               height={474}
-              alt="CryptoMate Purple color by Kansha"
+              alt="CryptoMate Purple color by Fusion"
             />
             <Image
               src="/assets/images/cm_gradient.png"
               width={101}
               height={474}
-              alt="CryptoMate Gradient color by Kansha"
+              alt="CryptoMate Gradient color by Fusion"
             />
             <Image
               src="/assets/images/cm_white.png"
               width={612}
               height={474}
-              alt="CryptoMate White color by Kansha"
+              alt="CryptoMate White color by Fusion"
             />
             <div className="flex flex-col justify-end ml-14">
               <p className="mt-11 text-white leading-[normal] text-lg font-light">
@@ -227,14 +227,14 @@ const PortfolioCryptoMate = () => {
               src="/assets/images/cryptomate_phone.png"
               width={718}
               height={411}
-              alt="CryptoMate Mobile by Kansha"
+              alt="CryptoMate Mobile by Fusion"
             />
             <div></div>
             <Image
               src="/assets/images/cryptomate_desktop.png"
               width={718}
               height={411}
-              alt="CryptoMate Desktop by Kansha"
+              alt="CryptoMate Desktop by Fusion"
             />
           </div>
           <div className="mx-8 mt-28 flex">
@@ -243,7 +243,7 @@ const PortfolioCryptoMate = () => {
                 src="/assets/images/cryptomate_tweeter.png"
                 width={466}
                 height={466}
-                alt="CryptoMate Tweeter by Kansha"
+                alt="CryptoMate Tweeter by Fusion"
               />
               <div className="mt-6 w-[469px] h-[263px] bg-[#202020] flex flex-col items-center">
                 <Image
@@ -251,14 +251,14 @@ const PortfolioCryptoMate = () => {
                   src="/assets/images/cryptomate_bepart_text.png"
                   width={316}
                   height={64.8}
-                  alt="CryptoMate be part text by Kansha"
+                  alt="CryptoMate be part text by Fusion"
                 />
                 <Image
                   className="mt-[24px]"
                   src="/assets/images/cryptomate_lets_talk_button.png"
                   width={205}
                   height={55}
-                  alt="CryptoMate lets talk button by Kansha"
+                  alt="CryptoMate lets talk button by Fusion"
                 />
               </div>
             </div>
@@ -267,14 +267,14 @@ const PortfolioCryptoMate = () => {
                 src="/assets/images/cryptomate_app_logo.jpg"
                 width={348}
                 height={368}
-                alt="CryptoMate App logo by Kansha"
+                alt="CryptoMate App logo by Fusion"
               />
               <Image
                 className="mt-6"
                 src="/assets/images/cryptomate_begin_journey.png"
                 width={344}
                 height={369}
-                alt="CryptoMate begin journey by Kansha"
+                alt="CryptoMate begin journey by Fusion"
               />
             </div>
             <div className="ml-6">
@@ -282,21 +282,21 @@ const PortfolioCryptoMate = () => {
                 src="/assets/images/cryptomate_3d_logo.png"
                 width={592}
                 height={368}
-                alt="CryptoMate 3D logo by Kansha"
+                alt="CryptoMate 3D logo by Fusion"
               />
               <div className="mt-6 flex">
                 <Image
                   src="/assets/images/cryptomate_community.jpg"
                   width={359.204}
                   height={369}
-                  alt="CryptoMate Community by Kansha"
+                  alt="CryptoMate Community by Fusion"
                 />
                 <Image
                   className="ml-6"
                   src="/assets/images/cryptomate_join_circlecuttons.png"
                   width={211}
                   height={369}
-                  alt="CryptoMate Join circke buttons by Kansha"
+                  alt="CryptoMate Join circke buttons by Fusion"
                 />
               </div>
             </div>
@@ -341,7 +341,7 @@ const PortfolioCryptoMate = () => {
               src="/assets/images/cryptomate_tablet.png"
               width={1020}
               height={892.757}
-              alt="CryptoMate Tablet by Kansha"
+              alt="CryptoMate Tablet by Fusion"
             />
             <div className="grid grid-cols-2 mx-28">
               <div>
@@ -413,7 +413,7 @@ const PortfolioCryptoMate = () => {
                   src="/assets/images/cryptomate_phones.png?pjp"
                   width={551.7}
                   height={731.7}
-                  alt="CryptoMate Phones by Kansha"
+                  alt="CryptoMate Phones by Fusion"
                 />
                 <div className="font-jost ml-32">
                   <div className="flex justify-between mt-3 border-t border-t-[#5E5E5E] pt-6">
@@ -453,25 +453,25 @@ const PortfolioCryptoMate = () => {
                 src="/assets/images/cryptomate_mobile_contact.png"
                 width={314}
                 height={760}
-                alt="CryptoMate Mobile contact view by Kansha"
+                alt="CryptoMate Mobile contact view by Fusion"
               />
               <Image
                 src="/assets/images/cryptomate_mobile_letstalk.png"
                 width={345}
                 height={760}
-                alt="CryptoMate Mobile Lets talk view by Kansha"
+                alt="CryptoMate Mobile Lets talk view by Fusion"
               />
               <Image
                 src="/assets/images/cryptomate_mobile_plans.png"
                 width={330}
                 height={760}
-                alt="CryptoMate Mobile plans view by Kansha"
+                alt="CryptoMate Mobile plans view by Fusion"
               />
               <Image
                 src="/assets/images/cryptomate_mobile_conditions.png"
                 width={331}
                 height={760}
-                alt="CryptoMate Mobile conditions view by Kansha"
+                alt="CryptoMate Mobile conditions view by Fusion"
               />
             </div>
           </div>
@@ -502,7 +502,7 @@ const PortfolioCryptoMate = () => {
                 src="/assets/images/cryptomate_twitter_account.png"
                 width={760.339}
                 height={768.438}
-                alt="CryptoMate Mobile Twitter account by Kansha"
+                alt="CryptoMate Mobile Twitter account by Fusion"
               />
             </div>
           </div>
@@ -520,7 +520,7 @@ const PortfolioCryptoMate = () => {
               src="/assets/images/cryptomate_banner.png"
               width={1448}
               height={631}
-              alt="CryptoMate Banner by Kansha"
+              alt="CryptoMate Banner by Fusion"
             />
           </div>
         </div>
