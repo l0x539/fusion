@@ -1,5 +1,5 @@
 'use client'
-import { bubbleDetailFactor, disabledPages, mediaBreakPoints, postionScalar, scaleScalar, scrollLerp, steps } from "@/utils/constants";
+import { COMING_SOON, bubbleDetailFactor, disabledPages, mediaBreakPoints, postionScalar, scaleScalar, scrollLerp, steps } from "@/utils/constants";
 import { sphereFragmentShader } from "@/utils/shaders/fragmentShaders";
 import { sphereVertexShader } from "@/utils/shaders/vertexShaders";
 import { Scroll, Text, useFBO, useScroll, useTexture } from "@react-three/drei";
@@ -28,12 +28,12 @@ const Background: FC<{
     setReady(true);
   }, []);
   return <>
-    <Texts />
+    {COMING_SOON ? <ComingSoonText /> : <Texts />}
     {(gpuTier > 0) && isReady ? <>
       <Bubble detail={gpuTier} />
-      <Bubble index={1} detail={gpuTier} />
+      {COMING_SOON ? <></> : <Bubble index={1} detail={gpuTier} />}
     </>: <></>}
-    <Images />
+    {COMING_SOON ? <></> : <Images />}
     <HomeEffects />
     <DropEffect />
   </>;
@@ -625,5 +625,24 @@ const Texts = () => {
     })}
   </group>
 }
+
+
+const ComingSoonText = () => {
+  const pathname = usePathname();
+  const [logo] = useTexture(['/assets/images/Logo.png']);
+
+  return (<group position={[0, -0.5, -3]}>
+    <sprite
+        position={[0, 0.8, -5]} /* position */
+        scale={new Vector3(90/10, 23/10, 1)}
+      >
+      <spriteMaterial map={logo} color={"#FFF"} alphaTest={0} opacity={1} />
+    </sprite>
+
+    <Text position={[0, -0.5, 0]} anchorX="center" anchorY="middle" visible={pathname === '/'} fontSize={0.375} letterSpacing={-0.025} font={'/assets/fonts/HelveticaNeueMedium.woff'} color="white">
+      COMING SOON!
+    </Text>
+  </group>);
+};
 
 export default Background;

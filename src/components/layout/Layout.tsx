@@ -7,7 +7,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { Leva } from "leva";
 import MainCanvas from "../three/MainCanvas";
 import CookiesConsent from "../CookiesConsent";
-import { disabledPages } from "@/utils/constants";
+import { COMING_SOON, disabledPages } from "@/utils/constants";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { selectApp, setScrolled } from "@/store/features/app/appSlice";
 import NavigationControls from "../three/NavigationControls";
@@ -56,8 +56,8 @@ const PageContent: FC<{
       </div>
       <Header />
       {!isMenuOpen ? children : <></>}
-      <ScrollHint scrollHint={!isScrolled && initScroll && !disabledPages.some(p => pathname.startsWith(p.path))} />
-      {/* {scrollHintBottom ? <ScrollHint scrollHint={true} /> : false} */}
+      {COMING_SOON ? <></> : <ScrollHint scrollHint={!isScrolled && initScroll && !disabledPages.some(p => pathname.startsWith(p.path))} />}
+      {scrollHintBottom ? <ScrollHint scrollHint={true} /> : false}
       <CookiesConsent />
     </NavigationControls>
     <div className="fixed top-0 left-0 w-[100dvw] h-[100dvh] z-[-1] pointer-events-auto">

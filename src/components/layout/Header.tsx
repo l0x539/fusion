@@ -6,6 +6,7 @@ import { Close } from "../Icons";
 import Menu from "../Menu";
 import { useAppSelector } from "@/store/hooks";
 import { selectApp } from "@/store/features/app/appSlice";
+import { COMING_SOON } from "@/utils/constants";
 
 const Header = () => {
   const searchParams  = useSearchParams();
@@ -41,7 +42,7 @@ const Header = () => {
       <CloseServices /> :
       !isMenuOpen ? <div className="animate-fade-in"><Logo width={90} height={13} /></div> : <></>}
     </Link>
-    {((pathname.startsWith('/services/') && pathname !== '/services/our-method/1')) ? <></>: <div className="py-12">
+    {((pathname.startsWith('/services/') && pathname !== '/services/our-method/1')) ? <></>: COMING_SOON ? <></> : <div className="py-12">
       <Menu />
     </div>}
   </header>);

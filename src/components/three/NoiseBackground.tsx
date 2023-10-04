@@ -1,11 +1,11 @@
 import { useFrame } from "@react-three/fiber";
-import { FC, useEffect, useMemo, useRef } from "react";
+import { FC, useEffect, useMemo, useRef, useState } from "react";
 import { CatmullRomCurve3, Color, MathUtils, Vector2, Vector3 } from "three";
 import { useControls, Leva } from "leva";
 import { bgVertexShader } from "@/utils/shaders/vertexShaders";
 import { bgFragmentShader } from "@/utils/shaders/fragmentShaders";
 import { useScroll } from "@react-three/drei";
-import { disabledPages, scrollLerp, steps } from "@/utils/constants";
+import { COMING_SOON, disabledPages, scrollLerp, steps } from "@/utils/constants";
 import { usePathname } from "next/navigation";
 import { selectGl } from "@/store/features/gl/glSlice";
 import { useAppSelector } from "@/store/hooks";
@@ -216,6 +216,53 @@ const NoiseBackground: FC<{
     }
   });
 
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    let cycleColors = 0;
+    if (COMING_SOON) {
+      interval = setInterval(() => {
+        console.log(cycleColors);
+        
+        switch ((cycleColors+1)%3) {
+          case 0:
+            color1.copy(new Color('#439393'));
+            color2.copy(new Color('#0c4e23'));
+            color3.copy(new Color('#245c78'));
+            break;
+          case 1:
+            color1.copy(new Color('#48a9b9'));
+            color2.copy(new Color('#1e274e'));
+            color3.copy(new Color('#1c2e2a'));
+            break;
+          case 2:
+            color1.copy(new Color('#D14CA6'));
+            color2.copy(new Color('#781671'));
+            color3.copy(new Color('#89B378'));
+            break;
+          default:
+            color1.copy(new Color('#439393'))
+            color2.copy(new Color('#0c4e23'))
+            color3.copy(new Color('#245c78'))
+            break;
+        }
+        cycleColors++;
+      }, 15000)
+    }
+
+    return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [color1, color2, color3])
+
+  useEffect(() => {
+    if (COMING_SOON) {
+      setTimeout(() => {
+        color1.copy(new Color('#439393'))
+        color2.copy(new Color('#0c4e23'))
+        color3.copy(new Color('#245c78'))
+      }, 3000)
+    }
+  }, [color1, color2, color3])
+
   useFrame(({clock}) => {
     if (!shaderMaterialRef.current) return;
     shaderMaterialRef.current.uniforms.uTime.value =  clock.elapsedTime;
@@ -244,7 +291,7 @@ const NoiseBackground: FC<{
       shaderMaterialRef.current.uniforms.uColor3.value = {
         r: uColor3.r/255, g: uColor3.g/255, b: uColor3.b/255
       }
-    } else if (dp?.path) {
+    } else if (!COMING_SOON && dp?.path) {
       v3.copy(dp.bg.color1)
       color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
       shaderMaterialRef.current.uniforms.uColor1.value = {
@@ -268,7 +315,7 @@ const NoiseBackground: FC<{
       };
       // v3.set(shaderMaterialRef.current.uniforms.uAlpha.value, 0, 0);
       shaderMaterialRef.current.uniforms.uAlpha.value = dp.bg.alpha;
-    } else {
+    } else if (!COMING_SOON) {
       v3.copy(colors1.getPoint(progress))
       color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
       shaderMaterialRef.current.uniforms.uColor1.value = {
@@ -292,6 +339,25 @@ const NoiseBackground: FC<{
       };
       v3.set(shaderMaterialRef.current.uniforms.uAlpha.value, 0, 0);
       shaderMaterialRef.current.uniforms.uAlpha.value = alpha?.getPoint(progress)?.x;
+    } else if (COMING_SOON) {
+      color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
+      shaderMaterialRef.current.uniforms.uColor1.value = {
+        r: color.lerp(color1, 0.01).r,
+        g: color.lerp(color1, 0.01).g,
+        b: color.lerp(color1, 0.01).b
+      };
+      color.set(shaderMaterialRef.current.uniforms.uColor2.value.r, shaderMaterialRef.current.uniforms.uColor2.value.g, shaderMaterialRef.current.uniforms.uColor2.value.b)
+      shaderMaterialRef.current.uniforms.uColor2.value = {
+        r: color.lerp(color2, 0.01).r,
+        g: color.lerp(color2, 0.01).g,
+        b: color.lerp(color2, 0.01).b
+      };
+      shaderMaterialRef.current.uniforms.uColor3.value = {
+        r: color.lerp(color3, 0.01).r,
+        g: color.lerp(color3, 0.01).g,
+        b: color.lerp(color3, 0.01).b
+      };
+      shaderMaterialRef.current.uniforms.uAlpha.value = 0.6;
     }
     shaderMaterialRef.current.uniforms.uBlackBorderFade.value = uBlackBorderFade
     shaderMaterialRef.current.uniforms.uBlackTimeScale.value = uBlackTimeScale

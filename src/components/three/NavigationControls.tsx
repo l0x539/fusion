@@ -1,7 +1,7 @@
 import { setScrollBottomHint, setScrolled } from "@/store/features/app/appSlice";
 import { selectGl, setProgress } from "@/store/features/gl/glSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { disabledPages, progressSpeed, scrollBottom, steps } from "@/utils/constants";
+import { COMING_SOON, disabledPages, progressSpeed, scrollBottom, steps } from "@/utils/constants";
 import { range } from "@/utils/func";
 import { Handler, useGesture } from "@use-gesture/react";
 import { usePathname, useRouter } from "next/navigation";
@@ -139,7 +139,7 @@ const NavigationControls: FC<{
     },
   });
 
-  return <main {...bind()} className={`touch-pan-y absolute min-h-[100dvh] min-w-[100dvw] overscroll-none overflow-hidden ${(["/", "/contact", "/culture"].includes(pathname) || pathname.startsWith('/services'))  ? 'fullScreen mainWrapper' : 'mainWrapper'}`} ref={mainRef}>
+  return <main {...(COMING_SOON ? {} : bind())} className={`touch-pan-y absolute min-h-[100dvh] min-w-[100dvw] overscroll-none overflow-hidden ${(["/", "/contact", "/culture"].includes(pathname) || pathname.startsWith('/services'))  ? 'fullScreen mainWrapper' : 'mainWrapper'}`} ref={mainRef}>
     {children}
   </main>
 };
