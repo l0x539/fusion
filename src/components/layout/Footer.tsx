@@ -16,7 +16,7 @@ const Footer = () => {
     </ul>
     <ul>
       <li>
-        <FooterLink opener href="https://linkedin.com/company/devsolvers">
+        <FooterLink opener href="https://linkedin.com/company/fusiondotbi">
           LinkedIn
         </FooterLink>
       </li>
