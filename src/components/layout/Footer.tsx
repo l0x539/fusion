@@ -9,19 +9,19 @@ const Footer = () => {
         </FooterLink>
       </li>
       <li>
-        <FooterLink href="tel:+34672300910">
-          +34 672300910
+        <FooterLink href="tel:+213663349840">
+          +213 663349840
         </FooterLink>
       </li>
     </ul>
     <ul>
       <li>
-        <FooterLink opener href="https://linkedin.com">
+        <FooterLink opener href="https://linkedin.com/company/devsolvers">
           LinkedIn
         </FooterLink>
       </li>
       <li>
-        <FooterLink opener href="https://instagram.com">
+        <FooterLink opener href="https://instagram.com/fusion.bi">
           Instagram
         </FooterLink>
       </li>
