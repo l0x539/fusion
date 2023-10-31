@@ -1906,6 +1906,6 @@ export const scaleScalar = {
   mobile: 0.7
 }
 
-export const COMING_SOON = true;
+export const COMING_SOON = false;
 
 useTexture.preload('/assets/images/Logo.png');
