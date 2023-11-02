@@ -1,5 +1,5 @@
 'use client'
-import { FC, ReactNode, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { FC, ReactNode, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Header from "./Header";
 import { Provider } from "react-redux";
 import store from "@/store/store";
@@ -49,10 +49,12 @@ const PageContent: FC<{
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const controls = useMemo(() => searchParams.has('controls'), []);
+
   return <>
     <NavigationControls>     
       <div className="pointer-events-auto">
-        <Leva collapsed={false} hidden={!searchParams.has('controls')} />
+        <Leva hidden={!controls} />
       </div>
       <Header />
       {!isMenuOpen ? children : <></>}

@@ -4,7 +4,8 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { COMING_SOON, disabledPages, progressSpeed, scrollBottom, steps } from "@/utils/constants";
 import { range } from "@/utils/func";
 import { Handler, useGesture } from "@use-gesture/react";
-import { usePathname, useRouter } from "next/navigation";
+import { useControls } from "leva";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FC, ReactNode, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -19,6 +20,18 @@ const NavigationControls: FC<{
   const {progress} = useAppSelector(selectGl);
   const dispatch = useAppDispatch();
 
+  const searchParams = useSearchParams();
+
+  const {
+    scrollSpeed
+  } = useControls('ScrollSpeed', {
+    scrollSpeed: {
+      value: 0.2,
+      min: 0,
+      max: 1
+    }
+  })
+
   const handleScroll: Handler<"scroll" | "wheel" | "drag", UIEvent> = ({
     direction: [_, y],
     intentional,
@@ -29,7 +42,7 @@ const NavigationControls: FC<{
   }) => {
 
     if (y!==0) {
-      const newVal = progress + (deltaY*(type.startsWith('pointer') ? progressSpeed.pointer : progressSpeed.wheel));
+      const newVal = progress + (deltaY*(searchParams.has('controls') ? (scrollSpeed*.001) : type.startsWith('pointer') ? progressSpeed.pointer : progressSpeed.wheel));
       dispatch(setProgress(
         Math.min(Math.max(newVal, 0), 1)
       ));

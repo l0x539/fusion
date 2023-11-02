@@ -4,7 +4,7 @@ import { sphereFragmentShader } from "@/utils/shaders/fragmentShaders";
 import { sphereVertexShader } from "@/utils/shaders/vertexShaders";
 import { Scroll, Text, useFBO, useScroll, useTexture } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { makeNoise4D } from "open-simplex-noise";
 import { FC, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { BackSide, CatmullRomCurve3, Color, Euler, FrontSide, Group, Mesh, Quaternion, ShaderMaterial, SphereGeometry, Sprite, Texture, Vector2, Vector3 } from "three";
@@ -15,6 +15,7 @@ import { useMediaQuery } from "react-responsive";
 import { useAppSelector } from "@/store/hooks";
 import { selectApp } from "@/store/features/app/appSlice";
 import { selectGl } from "@/store/features/gl/glSlice";
+import { useControls } from "leva";
 
 function lerp(a: number, b: number, alpha: number ) {
   return a + alpha * (b - a)
@@ -27,13 +28,20 @@ const Background: FC<{
   useEffect(() => {
     setReady(true);
   }, []);
+
+  const {
+    lerpScroll
+  } = useControls('ScrollLerp', {
+    lerpScroll: .02
+  });
+
   return <>
-    {COMING_SOON ? <ComingSoonText /> : <Texts />}
+    {COMING_SOON ? <ComingSoonText /> : <Texts lerpScroll={lerpScroll} />}
     {(gpuTier > 0) && isReady ? <>
-      <Bubble detail={gpuTier} />
-      {COMING_SOON ? <></> : <Bubble index={1} detail={gpuTier} />}
+      <Bubble lerpScroll={lerpScroll} detail={gpuTier} />
+      {COMING_SOON ? <></> : <Bubble lerpScroll={lerpScroll} index={1} detail={gpuTier} />}
     </>: <></>}
-    {COMING_SOON ? <></> : <Images />}
+    {COMING_SOON ? <></> : <Images lerpScroll={lerpScroll} />}
     <HomeEffects />
     <DropEffect />
   </>;
@@ -62,7 +70,11 @@ const images = steps.map((step) => step.images).reduce<{
   return imgs;
 }, {});
 
-const Images = () => {
+const Images: FC<{
+  lerpScroll: number;
+}> = ({
+  lerpScroll
+}) => {
   const {progress} = useAppSelector(selectGl);
   
   const adjustedImages = useMemo(() => {
@@ -92,7 +104,7 @@ const Images = () => {
   const paths = useTexture(Object.keys(images));
 
   return<>
-    {Object.keys(adjustedImages).map((image, index) => <SpriteImage
+    {Object.keys(adjustedImages).map((image, index) => <SpriteImage lerpScroll={lerpScroll}
       key={index}
       path={image}
       images={adjustedImages}
@@ -113,11 +125,13 @@ const SpriteImage: FC<{
     };
 };
   map: Texture;
+  lerpScroll: number;
   // color: Color;
   // position: Vector3;
   // rotation: Vector3;
   // scale: Vector3;
 }> = ({
+  lerpScroll,
   path,
   images,
   map,
@@ -132,6 +146,7 @@ const SpriteImage: FC<{
   const { isMenuOpen } = useAppSelector(selectApp);
   const {progress} = useAppSelector(selectGl);
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const screen = useMemo(() => (isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop') as 'tablet' | 'mobile' | 'desktop', [isMobile, isTablet])
 
   const scaleScalar = {
@@ -148,9 +163,9 @@ const SpriteImage: FC<{
     const opacity = images[path].opacity.getPoint(progress).x;
     meshSprite.current.material.opacity = !isDisabledPage ? opacity : 0;
     meshSprite.current.visible = (opacity > 0.07) && !isMenuOpen && !disabledPages.some((p) => pathname.startsWith(p.path));
-    meshSprite.current.position.lerp(images[path].position.getPoint(progress), scrollLerp);
+    meshSprite.current.position.lerp(images[path].position.getPoint(progress), searchParams.has('controls') ? lerpScroll : scrollLerp);
     meshSprite.current.rotation.setFromVector3(images[path].rotation.getPoint(progress));
-    meshSprite.current.scale.lerp(images[path].scale.getPoint(progress).multiplyScalar(scaleScalar[screen]), scrollLerp);
+    meshSprite.current.scale.lerp(images[path].scale.getPoint(progress).multiplyScalar(scaleScalar[screen]), searchParams.has('controls') ? lerpScroll : scrollLerp);
   });
 
   return <sprite
@@ -166,17 +181,19 @@ const SpriteImage: FC<{
 
 const Bubble: FC<{
   index?: number;
-  detail: number
+  detail: number;
+  lerpScroll: number;
 }> = ({
   index = 0,
-  detail
+  detail,
+  lerpScroll
 }) => {
   const pathname = usePathname();
   const mesh = useRef<Mesh<SphereGeometry, ShaderMaterial>>(null);
   const mainRenderTarget = useFBO();
   const backRenderTarget = useFBO();
   const { isMenuOpen } = useAppSelector(selectApp)
-
+  const searchParams = useSearchParams();
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
 
@@ -441,12 +458,12 @@ const Bubble: FC<{
     mesh.current.geometry.attributes.position.needsUpdate = true;
     
     // Bubble Position
-    mesh.current.position.lerp(positionView, scrollLerp)
+    mesh.current.position.lerp(positionView, searchParams.has('controls') ? lerpScroll : scrollLerp)
     if (disabledPages.some(p => pathname.startsWith(p.path))) {
-      mesh.current.position.lerp(disabledPages.findLast(p => pathname.startsWith(p.path))?.bubbles[index].position?? new Vector3, scrollLerp)
+      mesh.current.position.lerp(disabledPages.findLast(p => pathname.startsWith(p.path))?.bubbles[index].position?? new Vector3, searchParams.has('controls') ? lerpScroll : scrollLerp)
     }
     if (isMenuOpen) {
-      mesh.current.position.lerp(new Vector3(2, -5, 4), scrollLerp)
+      mesh.current.position.lerp(new Vector3(2, -5, 4), searchParams.has('controls') ? lerpScroll : scrollLerp)
     }
     // else {
     //   const destIndex = steps.findIndex((step) => pathname === step.path);
@@ -495,7 +512,7 @@ const Bubble: FC<{
     // Bubble Rotation
     const vec = v3.clone().setFromEuler(mesh.current.rotation);
     const destVec = rotation.getPoint(progress);
-    const newRot = vec.lerp(destVec, scrollLerp)
+    const newRot = vec.lerp(destVec, searchParams.has('controls') ? lerpScroll : scrollLerp)
     
     mesh.current.rotation.setFromVector3(newRot)
 
@@ -582,7 +599,11 @@ const Bubble: FC<{
   );
 }
 
-const Texts = () => {
+const Texts: FC<{
+  lerpScroll: number
+}> = ({
+  lerpScroll
+}) => {
   const { width } = useThree(({viewport}) => viewport)
   const ref = useRef<Group>(null);
   const {progress} = useAppSelector(selectGl);
@@ -611,10 +632,12 @@ const Texts = () => {
     }
   }, [isMobile, isTablet, width]);
 
+  const searchParams = useSearchParams();
+
   useFrame(({clock}) => {
     if (!ref.current) return;
     v3.setX(-progress*(width*steps.length))
-    ref.current.position.lerp(v3, scrollLerp)
+    ref.current.position.lerp(v3, searchParams.has('controls') ? lerpScroll : scrollLerp)
   });
 
   return <group ref={ref} visible={!disabledPages.some(dp => pathname.startsWith(dp.path)) && !isMenuOpen} >

@@ -28,12 +28,6 @@ const MainCanvas: FC<{
     })
   }, []);
 
-  const {
-    scrollSpeed
-  } = useControls('Scroll', {
-    scrollSpeed: 1
-  })
-
   return (
     <>
       <div className="absolute top-0 left-0 w-[100dvw] h-[100dvh] z-[-1]">

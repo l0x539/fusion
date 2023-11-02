@@ -1,12 +1,12 @@
 import { useFrame } from "@react-three/fiber";
 import { FC, useEffect, useMemo, useRef, useState } from "react";
 import { CatmullRomCurve3, Color, MathUtils, Vector2, Vector3 } from "three";
-import { useControls, Leva } from "leva";
+import { useControls } from "leva";
 import { bgVertexShader } from "@/utils/shaders/vertexShaders";
 import { bgFragmentShader } from "@/utils/shaders/fragmentShaders";
 import { useScroll } from "@react-three/drei";
-import { COMING_SOON, disabledPages, scrollLerp, steps } from "@/utils/constants";
-import { usePathname } from "next/navigation";
+import { COMING_SOON, disabledPages, scrollLerp , steps } from "@/utils/constants";
+import { usePathname, useSearchParams } from "next/navigation";
 import { selectGl } from "@/store/features/gl/glSlice";
 import { useAppSelector } from "@/store/hooks";
 import { useSpring, config } from "@react-spring/three";
@@ -17,6 +17,8 @@ const NoiseBackground: FC<{
   const bgRef: any = useRef();
   const {progress} = useAppSelector(selectGl);
   const pathname = usePathname();
+
+  const searchParams = useSearchParams();
 
   const {
     uniforms,
@@ -207,6 +209,12 @@ const NoiseBackground: FC<{
   });
 
   const {
+    lerpScroll
+  } = useControls('ScrollLerp', {
+    lerpScroll: .02
+  });
+
+  const {
     springProgress
   } = useSpring({
     springProgress: progress,
@@ -295,23 +303,23 @@ const NoiseBackground: FC<{
       v3.copy(dp.bg.color1)
       color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
       shaderMaterialRef.current.uniforms.uColor1.value = {
-        r: color.lerp((color.clone()).setFromVector3(v3), scrollLerp).r,
-        g: color.lerp((color.clone()).setFromVector3(v3), scrollLerp).g,
-        b: color.lerp((color.clone()).setFromVector3(v3), scrollLerp).b
+        r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+        g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+        b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
       };
       v3.copy(dp.bg.color2)
       color.set(shaderMaterialRef.current.uniforms.uColor2.value.r, shaderMaterialRef.current.uniforms.uColor2.value.g, shaderMaterialRef.current.uniforms.uColor2.value.b)
       shaderMaterialRef.current.uniforms.uColor2.value = {
-        r: color.lerp((color.clone()).setFromVector3(v3), scrollLerp).r,
-        g: color.lerp((color.clone()).setFromVector3(v3), scrollLerp).g,
-        b: color.lerp((color.clone()).setFromVector3(v3), scrollLerp).b
+        r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+        g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+        b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
       };
       v3.copy(dp.bg.color3)
       color.set(shaderMaterialRef.current.uniforms.uColor3.value.r, shaderMaterialRef.current.uniforms.uColor3.value.g, shaderMaterialRef.current.uniforms.uColor3.value.b)
       shaderMaterialRef.current.uniforms.uColor3.value = {
-        r: color.lerp((color.clone()).setFromVector3(v3), scrollLerp).r,
-        g: color.lerp((color.clone()).setFromVector3(v3), scrollLerp).g,
-        b: color.lerp((color.clone()).setFromVector3(v3), scrollLerp).b
+        r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+        g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+        b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
       };
       // v3.set(shaderMaterialRef.current.uniforms.uAlpha.value, 0, 0);
       shaderMaterialRef.current.uniforms.uAlpha.value = dp.bg.alpha;
@@ -319,23 +327,23 @@ const NoiseBackground: FC<{
       v3.copy(colors1.getPoint(progress))
       color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
       shaderMaterialRef.current.uniforms.uColor1.value = {
-        r: color.lerp((color1.clone()).setFromVector3(v3), scrollLerp).r,
-        g: color.lerp((color1.clone()).setFromVector3(v3), scrollLerp).g,
-        b: color.lerp((color1.clone()).setFromVector3(v3), scrollLerp).b
+        r: color.lerp((color1.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+        g: color.lerp((color1.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+        b: color.lerp((color1.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
       };
       v3.copy(colors2.getPoint(progress))
       color.set(shaderMaterialRef.current.uniforms.uColor2.value.r, shaderMaterialRef.current.uniforms.uColor2.value.g, shaderMaterialRef.current.uniforms.uColor2.value.b)
       shaderMaterialRef.current.uniforms.uColor2.value = {
-        r: color.lerp((color2.clone()).setFromVector3(v3), scrollLerp).r,
-        g: color.lerp((color2.clone()).setFromVector3(v3), scrollLerp).g,
-        b: color.lerp((color2.clone()).setFromVector3(v3), scrollLerp).b
+        r: color.lerp((color2.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+        g: color.lerp((color2.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+        b: color.lerp((color2.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
       };
       v3.copy(colors3.getPoint(progress))
       color.set(shaderMaterialRef.current.uniforms.uColor3.value.r, shaderMaterialRef.current.uniforms.uColor3.value.g, shaderMaterialRef.current.uniforms.uColor3.value.b)
       shaderMaterialRef.current.uniforms.uColor3.value = {
-        r: color.lerp((color3.clone()).setFromVector3(v3), scrollLerp).r,
-        g: color.lerp((color3.clone()).setFromVector3(v3), scrollLerp).g,
-        b: color.lerp((color3.clone()).setFromVector3(v3), scrollLerp).b
+        r: color.lerp((color3.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+        g: color.lerp((color3.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+        b: color.lerp((color3.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
       };
       v3.set(shaderMaterialRef.current.uniforms.uAlpha.value, 0, 0);
       shaderMaterialRef.current.uniforms.uAlpha.value = alpha?.getPoint(progress)?.x;
