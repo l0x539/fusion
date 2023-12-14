@@ -16,6 +16,7 @@ import { useAppSelector } from "@/store/hooks";
 import { selectApp } from "@/store/features/app/appSlice";
 import { selectGl } from "@/store/features/gl/glSlice";
 import { useControls } from "leva";
+import Projects from "./Projects";
 
 function lerp(a: number, b: number, alpha: number ) {
   return a + alpha * (b - a)
@@ -44,6 +45,7 @@ const Background: FC<{
     {COMING_SOON ? <></> : <Images lerpScroll={lerpScroll} />}
     <HomeEffects />
     <DropEffect />
+    <Projects />
   </>;
 }
 
@@ -560,6 +562,7 @@ const Bubble: FC<{
     mesh.current.material.uniforms.uSaturation.value = adjustedUniforms.saturation.getPoint(progress).x;
     mesh.current.material.uniforms.uShininess.value = adjustedUniforms.shininess.getPoint(progress).x;
     mesh.current.material.needsUpdate = true;
+
   });
 
   // Resize bubble resolution
@@ -621,11 +624,13 @@ const Texts: FC<{
     return {
       defaultPos: new Vector3(-(width+3), 0, 0),
       TEXTS: [
-        "Lorem\nContent Lab\n& Ipsum dolor\n/Sit amet\n2022—2023",
-        "We help \nfounders \nmake profits \nthat match \ntheir passions.",
-        "We empowering \ncompanies to \nembrace \ndisruptive ideas",
-        "We reduce the gap \nfor innovation and \nguide our clients \ntowards sustainable \nsuccess",
-        ...(Array.from({length: steps.length-4}, (_, i) => ""))
+        "We take brands\ntoward sustainable\nsuccess through\ninnovation.",
+        // "Lorem\nContent Lab\n& Ipsum dolor\n/Sit amet\n2022—2023",
+        // "We help \nfounders \nmake profits \nthat match \ntheir passions.",
+        // "We empowering \ncompanies to \nembrace \ndisruptive ideas",
+        // "We reduce the gap \nfor innovation and \nguide our clients \ntowards sustainable \nsuccess",
+        ...(Array.from({length: steps.length-7}, (_, i) => ""))
+        // ...(Array.from({length: steps.length-4}, (_, i) => ""))
       ],
       v3: new Vector3,
       screen: (isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop') as 'tablet' | 'mobile' | 'desktop'

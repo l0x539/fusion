@@ -34,7 +34,7 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('black')),
       alpha: 1
     },
-    range: [0.0, 0.22],
+    range: [0.0, 0.0768],
     stale: 0,
     path: '/',
     bubbles: [
@@ -78,401 +78,401 @@ export const steps = [
         position: new Vector3(),
         rotation: new Vector3(),
         scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
+        opacity: -2,
         color: new Color("white")
       }
     }
   },
-  { // Index 2
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('black')),
-      color2: new Vector3().setFromColor(new Color('black')),
-      color3: new Vector3().setFromColor(new Color('black')),
-      alpha: 1
-    },
-    range: [0.0, 0.22],
-    stale: 0,
-    path: '/',
-    bubbles: [
-      {
-        position: new Vector3(0.2),
-        rotation:  new Vector3(0, -2*Math.PI/3),
-      },
-      {
-        position: new Vector3(-20, -20, 20),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 0.15,
-      shininess: 2000.0,
-      fresnelPower: 7,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 1.03,
-      chromaticAberration: 0.04,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 0.6,
-      noiseStrength: 0.1,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("white")
-      }
-    }
-  },
-  { // Index 3
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('black')),
-      color2: new Vector3().setFromColor(new Color('black')),
-      color3: new Vector3().setFromColor(new Color('black')),
-      alpha: 1
-    },
-    range: [0.0, 0.22],
-    stale: 0,
-    path: '/',
-    bubbles: [
-      {
-        position: new Vector3(0.4),
-        rotation:  new Vector3(0, -Math.PI/3),
-      },
-      {
-        position: new Vector3(-20, -20, 20),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 0.15,
-      shininess: 2000.0,
-      fresnelPower: 7,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 1.03,
-      chromaticAberration: 0.04,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 0.6,
-      noiseStrength: 0.1,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("white")
-      }
-    }
-  },
-  { // Index 4
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('black')),
-      color2: new Vector3().setFromColor(new Color('black')),
-      color3: new Vector3().setFromColor(new Color('black')),
-      alpha: 1
-    },
-    range: [0.0, 0.22],
-    stale: 0,
-    path: '/',
-    bubbles: [
-      {
-        position: new Vector3(0.6),
-        rotation:  new Vector3(0, 0),
-      },
-      {
-        position: new Vector3(-20, -20, 20),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 0.15,
-      shininess: 2000.0,
-      fresnelPower: 7,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 1.03,
-      chromaticAberration: 0.04,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 0.6,
-      noiseStrength: 0.1,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("white")
-      }
-    }
-  },
-  { // Index 5
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('black')),
-      color2: new Vector3().setFromColor(new Color('black')),
-      color3: new Vector3().setFromColor(new Color('black')),
-      alpha: 1
-    },
-    range: [0.0, 0.22],
-    stale: 0,
-    path: '/',
-    bubbles: [
-      {
-        position: new Vector3(1, 0, 2.1),
-        rotation:  new Vector3(0, Math.PI/3),
-      },
-      {
-        position: new Vector3(-20, -20, 20),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 0.15,
-      shininess: 2000.0,
-      fresnelPower: 7,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 1.03,
-      chromaticAberration: 0.04,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 0.6,
-      noiseStrength: 0.1,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(0, 0, -20),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("white")
-      }
-    }
-  },
-  { // Index 6
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('black')),
-      color2: new Vector3().setFromColor(new Color('black')),
-      color3: new Vector3().setFromColor(new Color('black')),
-      alpha: 1
-    },
-    range: [0.0, 0.22],
-    stale: 0,
-    path: '/',
-    bubbles: [
-      {
-        position: new Vector3( 0, 0, 3 ),
-        rotation:  new Vector3(0, 2*Math.PI/3),
-      },
-      {
-        position: new Vector3(-20, -20, 20),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 0.15,
-      shininess: 2000.0,
-      fresnelPower: 7,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 1.03,
-      chromaticAberration: 0.04,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 0.6,
-      noiseStrength: 0.1,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(0, 0, -5),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0.2,
-        color: new Color("white")
-      }
-    }
-  },
+  // { // Index 2
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('black')),
+  //     color2: new Vector3().setFromColor(new Color('black')),
+  //     color3: new Vector3().setFromColor(new Color('black')),
+  //     alpha: 1
+  //   },
+  //   range: [0.0, 0.22],
+  //   stale: 0,
+  //   path: '/',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3(0.2),
+  //       rotation:  new Vector3(0, -2*Math.PI/3),
+  //     },
+  //     {
+  //       position: new Vector3(-20, -20, 20),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.15,
+  //     shininess: 2000.0,
+  //     fresnelPower: 7,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 1.03,
+  //     chromaticAberration: 0.04,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 0.6,
+  //     noiseStrength: 0.1,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("white")
+  //     }
+  //   }
+  // },
+  // { // Index 3
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('black')),
+  //     color2: new Vector3().setFromColor(new Color('black')),
+  //     color3: new Vector3().setFromColor(new Color('black')),
+  //     alpha: 1
+  //   },
+  //   range: [0.0, 0.22],
+  //   stale: 0,
+  //   path: '/',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3(0.4),
+  //       rotation:  new Vector3(0, -Math.PI/3),
+  //     },
+  //     {
+  //       position: new Vector3(-20, -20, 20),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.15,
+  //     shininess: 2000.0,
+  //     fresnelPower: 7,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 1.03,
+  //     chromaticAberration: 0.04,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 0.6,
+  //     noiseStrength: 0.1,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("white")
+  //     }
+  //   }
+  // },
+  // { // Index 4
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('black')),
+  //     color2: new Vector3().setFromColor(new Color('black')),
+  //     color3: new Vector3().setFromColor(new Color('black')),
+  //     alpha: 1
+  //   },
+  //   range: [0.0, 0.22],
+  //   stale: 0,
+  //   path: '/',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3(0.6),
+  //       rotation:  new Vector3(0, 0),
+  //     },
+  //     {
+  //       position: new Vector3(-20, -20, 20),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.15,
+  //     shininess: 2000.0,
+  //     fresnelPower: 7,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 1.03,
+  //     chromaticAberration: 0.04,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 0.6,
+  //     noiseStrength: 0.1,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("white")
+  //     }
+  //   }
+  // },
+  // { // Index 5
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('black')),
+  //     color2: new Vector3().setFromColor(new Color('black')),
+  //     color3: new Vector3().setFromColor(new Color('black')),
+  //     alpha: 1
+  //   },
+  //   range: [0.0, 0.22],
+  //   stale: 0,
+  //   path: '/',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3(1, 0, 2.1),
+  //       rotation:  new Vector3(0, Math.PI/3),
+  //     },
+  //     {
+  //       position: new Vector3(-20, -20, 20),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.15,
+  //     shininess: 2000.0,
+  //     fresnelPower: 7,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 1.03,
+  //     chromaticAberration: 0.04,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 0.6,
+  //     noiseStrength: 0.1,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(0, 0, -20),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("white")
+  //     }
+  //   }
+  // },
+  // { // Index 6
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('black')),
+  //     color2: new Vector3().setFromColor(new Color('black')),
+  //     color3: new Vector3().setFromColor(new Color('black')),
+  //     alpha: 1
+  //   },
+  //   range: [0.0, 0.22],
+  //   stale: 0,
+  //   path: '/',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3( 0, 0, 3 ),
+  //       rotation:  new Vector3(0, 2*Math.PI/3),
+  //     },
+  //     {
+  //       position: new Vector3(-20, -20, 20),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.15,
+  //     shininess: 2000.0,
+  //     fresnelPower: 7,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 1.03,
+  //     chromaticAberration: 0.04,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 0.6,
+  //     noiseStrength: 0.1,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(0, 0, -5),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0.2,
+  //       color: new Color("white")
+  //     }
+  //   }
+  // },
   { // Services
     dropUniforms: {
       light: {
@@ -502,8 +502,8 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('#89B378')),
       alpha: 1
     },
-    range: [0.221, 0.3],
-    stale: 0.266,
+    range: [0.0768, 0.12],
+    stale: 0.091,
     path: '/services',
     bubbles: [
       {
@@ -551,396 +551,396 @@ export const steps = [
       }
     }
   },
-  { // Discovery
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('#439393')),
-      color2: new Vector3().setFromColor(new Color('#0c4e23')),
-      color3: new Vector3().setFromColor(new Color('#245c78')),
-      alpha: 1
-    },
-    range: [0.3, 0.357],
-    stale: (0.3+0.357)/2,
-    path: '/services/discovery',
-    bubbles: [
-      {
-        position: new Vector3( -4.5, 0.5, -2 ),
-        rotation:  new Vector3(0, Math.PI),
-      },
-      {
-        position: new Vector3(-8.5, -2.6, -6),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -3,
-        y: -4,
-        z: 1
-      },
-      diffuseness: -0.1,
-      shininess: 30.0,
-      fresnelPower: 8.0,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 0.8,
-      chromaticAberration: 0.01,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 2,
-      noiseStrength: 0.05,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(0, 0, -5),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("#6f6f6f")
-      }
-    }
-  },
-  { // Development
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('#439393')),
-      color2: new Vector3().setFromColor(new Color('#0c4e23')),
-      color3: new Vector3().setFromColor(new Color('#245c78')),
-      alpha: 1
-    },
-    range: [0.36, 0.4],
-    stale: (0.36+0.4)/2,
-    path: '/services/development',
-    bubbles: [
-      {
-        position: new Vector3( -2.5, 4, 0 ),
-        rotation:  new Vector3(0, Math.PI),
-      },
-      {
-        position: new Vector3(-10, -3.5, -6),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -3,
-        y: -4,
-        z: 1
-      },
-      diffuseness: 0.2,
-      shininess: 30.0,
-      fresnelPower: 8.0,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 0.3,
-      chromaticAberration: 0.01,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 2,
-      noiseStrength: 0.05,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(0, 0, -5),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("#6f6f6f")
-      }
-    }
-  },
-  { // Team
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('#439393')),
-      color2: new Vector3().setFromColor(new Color('#0c4e23')),
-      color3: new Vector3().setFromColor(new Color('purple')),
-      alpha: 1
-    },
-    range: [0.41, 0.45],
-    stale: (0.41+0.45)/2,
-    path: '/services/team',
-    bubbles: [
-      {
-        position: new Vector3( 4, 3, 2 ),
-        rotation:  new Vector3(0, Math.PI),
-      },
-      {
-        position: new Vector3(-4., -3.5, 0),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -3,
-        y: -4,
-        z: 1
-      },
-      diffuseness: 0.2,
-      shininess: 30.0,
-      fresnelPower: 8.0,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 0.3,
-      chromaticAberration: 0.01,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 2,
-      noiseStrength: 0.05,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(0, 0, -5),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("#6f6f6f")
-      }
-    }
-  },
-  { // Design
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('#439393')),
-      color2: new Vector3().setFromColor(new Color('#0c4e23')),
-      color3: new Vector3().setFromColor(new Color('purple')),
-      alpha: 1
-    },
-    range: [0.455, 0.485],
-    stale: (0.455+0.51)/2,
-    path: '/services/design',
-    bubbles: [
-      {
-        position: new Vector3( 5.5, 1.5, 0.3 ),
-        rotation:  new Vector3(0, Math.PI),
-      },
-      {
-        position: new Vector3(7, -4, -8),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -3,
-        y: -4,
-        z: 1
-      },
-      diffuseness: 0.2,
-      shininess: 30.0,
-      fresnelPower: 8.0,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 0.3,
-      chromaticAberration: 0.01,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 2,
-      noiseStrength: 0.05,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(0, 0, -5),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("#6f6f6f")
-      }
-    }
-  },
-  { // Services detail
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('#439393')),
-      color2: new Vector3().setFromColor(new Color('#0c4e23')),
-      color3: new Vector3().setFromColor(new Color('purple')),
-      alpha: 1
-    },
-    range: [0.485, 0.52],
-    stale: (0.516+0.537)/2,
-    path: '/services/services',
-    bubbles: [
-      {
-        position: new Vector3( 4.5, -0.5, 2 ),
-        rotation:  new Vector3(0, Math.PI),
-      },
-      {
-        position: new Vector3(8.5, 2.6, -4),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -3,
-        y: -4,
-        z: 1
-      },
-      diffuseness: 0.2,
-      shininess: 30.0,
-      fresnelPower: 8.0,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 0.3,
-      chromaticAberration: 0.01,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 2,
-      noiseStrength: 0.05,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(0, 0, -5),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("#6f6f6f")
-      }
-    }
-  },
+  // { // Discovery
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('#439393')),
+  //     color2: new Vector3().setFromColor(new Color('#0c4e23')),
+  //     color3: new Vector3().setFromColor(new Color('#245c78')),
+  //     alpha: 1
+  //   },
+  //   range: [0.3, 0.357],
+  //   stale: (0.3+0.357)/2,
+  //   path: '/services/discovery',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3( -4.5, 0.5, -2 ),
+  //       rotation:  new Vector3(0, Math.PI),
+  //     },
+  //     {
+  //       position: new Vector3(-8.5, -2.6, -6),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -3,
+  //       y: -4,
+  //       z: 1
+  //     },
+  //     diffuseness: -0.1,
+  //     shininess: 30.0,
+  //     fresnelPower: 8.0,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 0.8,
+  //     chromaticAberration: 0.01,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 2,
+  //     noiseStrength: 0.05,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(0, 0, -5),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("#6f6f6f")
+  //     }
+  //   }
+  // },
+  // { // Development
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('#439393')),
+  //     color2: new Vector3().setFromColor(new Color('#0c4e23')),
+  //     color3: new Vector3().setFromColor(new Color('#245c78')),
+  //     alpha: 1
+  //   },
+  //   range: [0.36, 0.4],
+  //   stale: (0.36+0.4)/2,
+  //   path: '/services/development',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3( -2.5, 4, 0 ),
+  //       rotation:  new Vector3(0, Math.PI),
+  //     },
+  //     {
+  //       position: new Vector3(-10, -3.5, -6),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -3,
+  //       y: -4,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.2,
+  //     shininess: 30.0,
+  //     fresnelPower: 8.0,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 0.3,
+  //     chromaticAberration: 0.01,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 2,
+  //     noiseStrength: 0.05,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(0, 0, -5),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("#6f6f6f")
+  //     }
+  //   }
+  // },
+  // { // Team
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('#439393')),
+  //     color2: new Vector3().setFromColor(new Color('#0c4e23')),
+  //     color3: new Vector3().setFromColor(new Color('purple')),
+  //     alpha: 1
+  //   },
+  //   range: [0.41, 0.45],
+  //   stale: (0.41+0.45)/2,
+  //   path: '/services/team',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3( 4, 3, 2 ),
+  //       rotation:  new Vector3(0, Math.PI),
+  //     },
+  //     {
+  //       position: new Vector3(-4., -3.5, 0),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -3,
+  //       y: -4,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.2,
+  //     shininess: 30.0,
+  //     fresnelPower: 8.0,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 0.3,
+  //     chromaticAberration: 0.01,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 2,
+  //     noiseStrength: 0.05,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(0, 0, -5),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("#6f6f6f")
+  //     }
+  //   }
+  // },
+  // { // Design
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('#439393')),
+  //     color2: new Vector3().setFromColor(new Color('#0c4e23')),
+  //     color3: new Vector3().setFromColor(new Color('purple')),
+  //     alpha: 1
+  //   },
+  //   range: [0.455, 0.485],
+  //   stale: (0.455+0.51)/2,
+  //   path: '/services/design',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3( 5.5, 1.5, 0.3 ),
+  //       rotation:  new Vector3(0, Math.PI),
+  //     },
+  //     {
+  //       position: new Vector3(7, -4, -8),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -3,
+  //       y: -4,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.2,
+  //     shininess: 30.0,
+  //     fresnelPower: 8.0,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 0.3,
+  //     chromaticAberration: 0.01,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 2,
+  //     noiseStrength: 0.05,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(0, 0, -5),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("#6f6f6f")
+  //     }
+  //   }
+  // },
+  // { // Services detail
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('#439393')),
+  //     color2: new Vector3().setFromColor(new Color('#0c4e23')),
+  //     color3: new Vector3().setFromColor(new Color('purple')),
+  //     alpha: 1
+  //   },
+  //   range: [0.485, 0.52],
+  //   stale: (0.516+0.537)/2,
+  //   path: '/services/services',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3( 4.5, -0.5, 2 ),
+  //       rotation:  new Vector3(0, Math.PI),
+  //     },
+  //     {
+  //       position: new Vector3(8.5, 2.6, -4),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -3,
+  //       y: -4,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.2,
+  //     shininess: 30.0,
+  //     fresnelPower: 8.0,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 0.3,
+  //     chromaticAberration: 0.01,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 2,
+  //     noiseStrength: 0.05,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(0, 0, -5),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("#6f6f6f")
+  //     }
+  //   }
+  // },
   { // Our Method 1
     dropUniforms: {
       light: {
@@ -970,8 +970,8 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('#89B378')),
       alpha: Math.random()*0.2
     },
-    range: [0.52, 0.6],
-    stale: 0.55,
+    range: [0.12, 0.192],
+    stale: 0.173,
     path: '/services/our-method/1',
     bubbles: [
       {
@@ -1014,7 +1014,7 @@ export const steps = [
         position: new Vector3(0, 0, -5),
         rotation: new Vector3(),
         scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
+        opacity: -2,
         color: new Color("#6f6f6f")
       }
     }
@@ -1048,8 +1048,8 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('#89B378')),
       alpha: Math.random()*0.2
     },
-    range: [0.6, 0.64],
-    stale: 0.61,
+    range: [0.192, 0.283],
+    stale: 0.249,
     path: '/services/our-method/2',
     bubbles: [
       {
@@ -1126,8 +1126,8 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('#89B378')),
       alpha: Math.random()*0.2
     },
-    range: [0.64, 0.68],
-    stale: 0.65,
+    range: [0.283, 0.364],
+    stale: 0.336,
     path: '/services/our-method/3',
     bubbles: [
       {
@@ -1204,8 +1204,8 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('#89B378')),
       alpha: Math.random()*0.2
     },
-    range: [0.68, 0.71],
-    stale: 0.69,
+    range: [0.364, 0.475],
+    stale: 0.4224,
     path: '/services/our-method/4',
     bubbles: [
       {
@@ -1282,8 +1282,8 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('#89B378')),
       alpha: Math.random()*0.2
     },
-    range: [0.71, 0.76],
-    stale: 0.72,
+    range: [0.475, 0.511],
+    stale: 0.497,
     path: '/services/our-method/5',
     bubbles: [
       {
@@ -1360,7 +1360,7 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('#1c2e2a')),
       alpha: 1
     },
-    range: [0.74, 0.82],
+    range: [0.578, 0.88],
     stale: 0.771,
     path: '/partners',
     bubbles: [
@@ -1409,162 +1409,162 @@ export const steps = [
       }
     }
   },
-  { // Partners 2
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('#48a9b9')),
-      color2: new Vector3().setFromColor(new Color('#1e274e')),
-      color3: new Vector3().setFromColor(new Color('#1c2e2a')),
-      alpha: 1
-    },
-    range: [0.74, 0.88],
-    stale: 0.771,
-    path: '/partners',
-    bubbles: [
-      {
-        position: new Vector3( 0, -8 ),
-        rotation:  new Vector3(0, Math.PI),
-      },
-      {
-        position: new Vector3(-20, -20, 20),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 0.2,
-      shininess: 15.0,
-      fresnelPower: 8.0,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 1.03,
-      chromaticAberration: 0.04,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 1.05,
-      noiseStrength: 0.17,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(0, 0, -5),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("#6f6f6f")
-      }
-    }
-  },
-  { // Partners 3
-    dropUniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 1,
-      shininess: 0,
-      fresnelPower: 8,
-      iorR: 0,
-      iorY: 0,
-      iorG: 0,
-      iorC: 0,
-      iorB: 0,
-      iorP: 0,
-      saturation: 0,
-      chromaticAberration: 0,
-      refraction: 0,
-      noiseX: 0,
-      noiseY: 0,
-      noiseZ: 0
-    },
-    bg: {
-      color1: new Vector3().setFromColor(new Color('#48a9b9')),
-      color2: new Vector3().setFromColor(new Color('#1e274e')),
-      color3: new Vector3().setFromColor(new Color('#1c2e2a')),
-      alpha: 1
-    },
-    range: [0.88, 0.89],
-    stale: 0.771,
-    path: '/partners',
-    bubbles: [
-      {
-        position: new Vector3( 0, -8 ),
-        rotation:  new Vector3(0, Math.PI),
-      },
-      {
-        position: new Vector3(-20, -20, 20),
-        rotation:  new Vector3(),
-      }
-    ],
-    uniforms: {
-      light: {
-        x: -1,
-        y: 1,
-        z: 1
-      },
-      diffuseness: 0.2,
-      shininess: 15.0,
-      fresnelPower: 8.0,
-      iorR: 1.15,
-      iorY: 1.16,
-      iorG: 1.18,
-      iorC: 1.22,
-      iorB: 1.22,
-      iorP: 1.22,
-      saturation: 1.03,
-      chromaticAberration: 0.04,
-      refraction: 0.22,
-      noise: {
-        x: 1,
-        y: 1,
-        z: 1
-      },
-      noiseSpeed: 1.05,
-      noiseStrength: 0.17,
-    },
-    images: {
-      '/assets/images/Logo.png': {
-        position: new Vector3(0, 0, -5),
-        rotation: new Vector3(),
-        scale: new Vector3(90/5, 23/5, 1),
-        opacity: 0,
-        color: new Color("#6f6f6f")
-      }
-    }
-  },
+  // { // Partners 2
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('#48a9b9')),
+  //     color2: new Vector3().setFromColor(new Color('#1e274e')),
+  //     color3: new Vector3().setFromColor(new Color('#1c2e2a')),
+  //     alpha: 1
+  //   },
+  //   range: [0.578, 0.88],
+  //   stale: 0.771,
+  //   path: '/partners',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3( 0, -8 ),
+  //       rotation:  new Vector3(0, Math.PI),
+  //     },
+  //     {
+  //       position: new Vector3(-20, -20, 20),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.2,
+  //     shininess: 15.0,
+  //     fresnelPower: 8.0,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 1.03,
+  //     chromaticAberration: 0.04,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 1.05,
+  //     noiseStrength: 0.17,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(0, 0, -5),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("#6f6f6f")
+  //     }
+  //   }
+  // },
+  // { // Partners 3
+  //   dropUniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 1,
+  //     shininess: 0,
+  //     fresnelPower: 8,
+  //     iorR: 0,
+  //     iorY: 0,
+  //     iorG: 0,
+  //     iorC: 0,
+  //     iorB: 0,
+  //     iorP: 0,
+  //     saturation: 0,
+  //     chromaticAberration: 0,
+  //     refraction: 0,
+  //     noiseX: 0,
+  //     noiseY: 0,
+  //     noiseZ: 0
+  //   },
+  //   bg: {
+  //     color1: new Vector3().setFromColor(new Color('#48a9b9')),
+  //     color2: new Vector3().setFromColor(new Color('#1e274e')),
+  //     color3: new Vector3().setFromColor(new Color('#1c2e2a')),
+  //     alpha: 1
+  //   },
+  //   range: [0.88, 0.89],
+  //   stale: 0.771,
+  //   path: '/partners',
+  //   bubbles: [
+  //     {
+  //       position: new Vector3( 0, -8 ),
+  //       rotation:  new Vector3(0, Math.PI),
+  //     },
+  //     {
+  //       position: new Vector3(-20, -20, 20),
+  //       rotation:  new Vector3(),
+  //     }
+  //   ],
+  //   uniforms: {
+  //     light: {
+  //       x: -1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     diffuseness: 0.2,
+  //     shininess: 15.0,
+  //     fresnelPower: 8.0,
+  //     iorR: 1.15,
+  //     iorY: 1.16,
+  //     iorG: 1.18,
+  //     iorC: 1.22,
+  //     iorB: 1.22,
+  //     iorP: 1.22,
+  //     saturation: 1.03,
+  //     chromaticAberration: 0.04,
+  //     refraction: 0.22,
+  //     noise: {
+  //       x: 1,
+  //       y: 1,
+  //       z: 1
+  //     },
+  //     noiseSpeed: 1.05,
+  //     noiseStrength: 0.17,
+  //   },
+  //   images: {
+  //     '/assets/images/Logo.png': {
+  //       position: new Vector3(0, 0, -5),
+  //       rotation: new Vector3(),
+  //       scale: new Vector3(90/5, 23/5, 1),
+  //       opacity: 0,
+  //       color: new Color("#6f6f6f")
+  //     }
+  //   }
+  // },
   { // Contact
     dropUniforms: {
       light: {
@@ -1594,8 +1594,8 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('black')),
       alpha: 1
     },
-    range: [0.89, 0.93],
-    stale: 0.914,
+    range: [0.678, 0.846],
+    stale: 0.7985,
     path: '/contact',
     bubbles: [
       {
@@ -1672,8 +1672,8 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('black')),
       alpha: 1
     },
-    range: [0.93, 0.975],
-    stale: (0.925+0.975)/2,
+    range: [0.846, 0.966],
+    stale: 0.9044,
     path: '/contact/form',
     bubbles: [
       {
@@ -1750,7 +1750,7 @@ export const steps = [
       color3: new Vector3().setFromColor(new Color('black')),
       alpha: 1
     },
-    range: [0.978, 1],
+    range: [0.966, 1],
     stale: 1,
     path: '/contact/info',
     bubbles: [
@@ -1835,6 +1835,40 @@ export const disabledPages = [
       color3: new Vector3().setFromColor(new Color('#020303')),
       alpha: 1
     },
+  },
+  {
+    path: '/partners',
+    bubbles: [
+      {
+        position: new Vector3(0, -20, 20)
+      },
+      {
+        position: new Vector3(0, -20, 20)
+      }
+    ],
+    bg: {
+      color1: new Vector3().setFromColor(new Color('#48a9b9')),
+      color2: new Vector3().setFromColor(new Color('#1e274e')),
+      color3: new Vector3().setFromColor(new Color('#1c2e2a')),
+      alpha: 1
+    },
+  },
+  {
+    path: '/projects',
+    bubbles: [
+      {
+        position: new Vector3(0, -20, 20)
+      },
+      {
+        position: new Vector3(0, -20, 20)
+      }
+    ],
+    bg: {
+      color1: new Vector3().setFromColor(new Color('#48a9b9')),
+      color2: new Vector3().setFromColor(new Color('#1e274e')),
+      color3: new Vector3().setFromColor(new Color('#1c2e2a')),
+      alpha: 1
+    },
   }
 ]
 
@@ -1851,7 +1885,7 @@ export const scrollBottom: any = {
 export const mediaBreakPoints = {
   desktop: {
     fontSize: 1.4,
-    textX: -1.5,
+    textX: -1,
     textY: 0,
     textZ: -3,
     widthExtention: 1.5,
@@ -1869,7 +1903,7 @@ export const mediaBreakPoints = {
   },
   mobile: {
     fontSize: 0.5,
-    textX: -0.5,
+    textX: 0,
     textY: 0,
     textZ: -3,
     widthExtention: 1.4,
@@ -1880,7 +1914,7 @@ export const mediaBreakPoints = {
 
 export const progressSpeed = {
   pointer: -.00025,
-  wheel: 0.0001
+  wheel: 0.00004
 }
 
 export const scrollLerp = 0.15;

@@ -48,7 +48,7 @@ const DropEffect: FC<{
           value: 0.22
         },
         uChromaticAberration: {
-          value: 1.4
+          value: 0
         },
         uSaturation: { value: 0.0 },
         uShininess: { value: 40.0 },
