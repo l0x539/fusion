@@ -1,4 +1,4 @@
-import { setScrollBottomHint, setScrolled } from "@/store/features/app/appSlice";
+import { selectApp, setScrollBottomHint, setScrolled } from "@/store/features/app/appSlice";
 import { selectGl, setProgress } from "@/store/features/gl/glSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { COMING_SOON, disabledPages, progressSpeed, scrollBottom, steps } from "@/utils/constants";
@@ -18,6 +18,7 @@ const NavigationControls: FC<{
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const {progress} = useAppSelector(selectGl);
+  const {scrollHintBottom} = useAppSelector(selectApp);
   const dispatch = useAppDispatch();
 
   const searchParams = useSearchParams();
@@ -50,6 +51,13 @@ const NavigationControls: FC<{
     
     if (pathname == '/partners') {
       if ((window.innerHeight + Math.round(window.scrollY)) >= (mainRef.current?.offsetHeight??0)) {
+        if (first && y > 0 && scrollHintBottom) {
+          router.push('/contact', 
+          {
+            scroll: false
+          });
+          dispatch(setProgress(steps.find(s => s.path === '/contact')?.range[0]??progress))
+        }
         dispatch(setScrollBottomHint(true))
       } else {
         dispatch(setScrollBottomHint(false))

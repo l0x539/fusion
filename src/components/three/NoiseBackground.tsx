@@ -229,8 +229,6 @@ const NoiseBackground: FC<{
     let cycleColors = 0;
     if (COMING_SOON) {
       interval = setInterval(() => {
-        console.log(cycleColors);
-        
         switch ((cycleColors+1)%3) {
           case 0:
             color1.copy(new Color('#439393'));
