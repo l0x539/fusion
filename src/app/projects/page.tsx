@@ -1,5 +1,7 @@
-import { Canvas } from "@react-three/fiber";
+import Projects from "@/components/three/Projects";
 
-export default function Projects() {
-  return;
+export default function ProjectsPage() {
+  return (
+    <Projects />
+  );
 }

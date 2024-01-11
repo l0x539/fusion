@@ -16,7 +16,6 @@ import { useAppSelector } from "@/store/hooks";
 import { selectApp } from "@/store/features/app/appSlice";
 import { selectGl } from "@/store/features/gl/glSlice";
 import { useControls } from "leva";
-import Projects from "./Projects";
 
 function lerp(a: number, b: number, alpha: number ) {
   return a + alpha * (b - a)
@@ -45,7 +44,6 @@ const Background: FC<{
     {COMING_SOON ? <></> : <Images lerpScroll={lerpScroll} />}
     <HomeEffects />
     <DropEffect />
-    <Projects />
   </>;
 }
 
