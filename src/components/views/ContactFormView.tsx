@@ -121,13 +121,13 @@ const ContactFormView = () => {
             </h5>
             <ul>
               <li>
-                <FooterLink type="secondary" href="mailto:fusion.lab@gmail.com">
-                  fusion.lab@gmail.com
+                <FooterLink type="secondary" href="mailto:support@fusion.bi">
+                  support@fusion.bi
                 </FooterLink>
               </li>
               <li>
-                <FooterLink type="secondary" href="tel:+00 0 . 00 00 00 00">
-                  +00 0 . 00 00 00 00
+                <FooterLink type="secondary" href="tel:+213 663 34 98 40">
+                  +213 663 34 98 40
                 </FooterLink>
               </li>
             </ul>
@@ -139,12 +139,12 @@ const ContactFormView = () => {
             <ul>
               <li>
                 <FooterLink type="secondary" href="#">
-                  Location: Lorem Ipsum dolor
+                  Location: Location: 16050 Kouba Alger
                 </FooterLink>
               </li>
               <li>
                 <FooterLink type="secondary" href="#">
-                  Lorem Ipsum dolor
+                  Algeria
                 </FooterLink>
               </li>
             </ul>
@@ -155,12 +155,12 @@ const ContactFormView = () => {
             </h5>
             <ul>
               <li>
-                <FooterLink type="secondary" opener href="https://instagram.com">
+                <FooterLink type="secondary" opener href="https://instagram.com/fusion.bi">
                   Instagram
                 </FooterLink>
               </li>
               <li>
-                <FooterLink type="secondary" opener href="https://linkedin.com">
+                <FooterLink type="secondary" opener href="https://linkedin.com/company/fusiondotbi">
                   LinkedIn
                 </FooterLink>
               </li>
