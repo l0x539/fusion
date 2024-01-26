@@ -1840,16 +1840,16 @@ export const disabledPages = [
     isProjects: true,
     projects: [
       {
-        color1: new Vector3().setFromColor(new Color('#D14CA6')),
-        color2: new Vector3().setFromColor(new Color('#781671')),
-        color3: new Vector3().setFromColor(new Color('#89B378')),
+        color1: new Vector3().setFromColor(new Color('#822FE5')),
+        color2: new Vector3().setFromColor(new Color('#31222B')),
+        color3: new Vector3().setFromColor(new Color('#ABCC50')),
         alpha: .4
       },
       {
         color1: new Vector3().setFromColor(new Color('#FFF852')),
         color2: new Vector3().setFromColor(new Color('#545428')),
         color3: new Vector3().setFromColor(new Color('#7a6c49')),
-        alpha: .4
+        alpha: .3
       },
       {
         color1: new Vector3().setFromColor(new Color('#514f79')),
