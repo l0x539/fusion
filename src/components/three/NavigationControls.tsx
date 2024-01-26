@@ -45,7 +45,7 @@ const NavigationControls: FC<{
     console.log(velocityY);
     
     if (y!==0) {
-      const newVal = progress + (type.startsWith('pointer') ? Math.min(velocityY, 10)*-y*0.03 : Math.min(velocityY, 10)*y*.003); //(velocityY*(searchParams.has('controls') ? (scrollSpeed*.001) : type.startsWith('pointer') ? progressSpeed.pointer : progressSpeed.wheel));
+      const newVal = progress + (type.startsWith('pointer') ? Math.min(velocityY, 10)*-y*((0.013*window.screen.availHeight)/1053) : Math.min(velocityY, 10)*y*((0.003*window.screen.availHeight)/1053)); //(velocityY*(searchParams.has('controls') ? (scrollSpeed*.001) : type.startsWith('pointer') ? progressSpeed.pointer : progressSpeed.wheel));
       dispatch(setProgress(
         Math.min(Math.max(newVal, 0), 1)
       ));
