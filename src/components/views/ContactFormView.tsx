@@ -139,12 +139,12 @@ const ContactFormView = () => {
             <ul>
               <li>
                 <FooterLink type="secondary" href="#">
-                  Location: Location: 16050 Kouba Alger
+                  Location: Chéraga, Rue Alioua Fodil, 16014
                 </FooterLink>
               </li>
               <li>
                 <FooterLink type="secondary" href="#">
-                  Algeria
+                  Alger, Algeria 
                 </FooterLink>
               </li>
             </ul>
