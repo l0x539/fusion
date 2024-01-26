@@ -33,7 +33,7 @@ const AllProjects = () => {
     <div
     className="absolute top-0 left-0 w-[100dvw] h-[100dvh] z-[1]">
       <Canvas shadows>
-        <ScrollControls pages={2} distance={2} >
+        <ScrollControls pages={2} distance={1.1} >
           <ProjectsList activeTab={activeTab} setActiveTab={setActiveTab} />
         </ScrollControls>
       </Canvas>

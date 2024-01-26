@@ -29,7 +29,7 @@ export default function ProjectDetails() {
   return (
     <main className="w-screen h-screen">
       <Canvas camera={{ position: [0, 0, 20], fov: 15 }}>
-        <ScrollControls damping={0.2} pages={5} distance={2}>
+        <ScrollControls damping={0.2} pages={5} distance={1.1}>
           <Scroll>
             <Typography />
             <Images />

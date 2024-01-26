@@ -2175,7 +2175,7 @@ export const mediaBreakPoints = {
 
 export const progressSpeed = {
   pointer: -.0025/20,
-  wheel: 0.00004
+  wheel: 0.00004*2
 }
 
 export const scrollLerp = 0.15;
