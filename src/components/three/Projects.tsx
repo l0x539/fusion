@@ -44,7 +44,7 @@ const AllProjects = () => {
       setProgress(Math.min(Math.max(
         progress + 
         (deltaY*10*(type.startsWith('pointer') ? 
-        progressSpeed.pointer :
+        progressSpeed.pointer*20 :
         progressSpeed.wheel))
         , 0), 1)
       );
