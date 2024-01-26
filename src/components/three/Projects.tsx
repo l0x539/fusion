@@ -1,20 +1,17 @@
 "use client";
-import { progressSpeed } from "@/utils/constants";
 import {
   Image,
   Scroll,
   ScrollControls,
   useProgress,
+  useScroll,
 } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { FC, useEffect, useMemo, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { motion as m } from "framer-motion";
 import { motion } from "framer-motion-3d";
-import { useSearchParams } from "next/navigation";
-import { Handler, useGesture } from "@use-gesture/react";
-import { useSpring, animated } from "@react-spring/three";
-import { Group } from "three";
+import { animated } from "@react-spring/three";
 import Link from "next/link";
 import { useAppDispatch } from "@/store/hooks";
 import { setProjectTab } from "@/store/features/app/appSlice";
@@ -31,43 +28,13 @@ const Projects = () => {
 }
 
 const AllProjects = () => {
-  const [progress, setProgress] = useState(0);
-
-  const handleScroll: Handler<"scroll" | "wheel" | "drag", UIEvent> = ({
-    direction: [_, y],
-    delta: [deltaX, deltaY],
-    type,
-    intentional
-  }) => {
-
-    if (y!==0 && intentional) {
-      setProgress(Math.min(Math.max(
-        progress + 
-        (deltaY*10*(type.startsWith('pointer') ? 
-        progressSpeed.pointer*20 :
-        progressSpeed.wheel))
-        , 0), 1)
-      );
-    }
-  }
-
-  const bind = useGesture({
-    // onWheel: handleScroll,
-    onWheel: handleScroll,
-    onScroll: handleScroll,
-    onDrag: handleScroll
-  }, {
-    eventOptions: {
-      passive: false
-    },
-  });
+  const [activeTab, setActiveTab] = useState<0|1|2|3>(0);
   return (
     <div
-    {...bind()}
     className="absolute top-0 left-0 w-[100dvw] h-[100dvh] z-[1]">
       <Canvas shadows>
-        <ScrollControls>
-          <ProjectsList setProgress={setProgress} progress={progress} activeTab={Math.round(progress*3)} />
+        <ScrollControls pages={2} distance={2} >
+          <ProjectsList activeTab={activeTab} setActiveTab={setActiveTab} />
         </ScrollControls>
       </Canvas>
     </div>
@@ -77,13 +44,18 @@ const AllProjects = () => {
 const AnimatedImage = animated(Image)
 
 const ProjectsList: FC<{
-  activeTab: number;
-  setProgress: (value: number) => void;
-  progress: number;
-}> = ({activeTab, setProgress, progress}) => {
+  setActiveTab: (value: 0|1|2|3) => void;
+  activeTab: 0|1|2|3
+}> = ({setActiveTab, activeTab}) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
   const { width, height } = useThree((state) => state.viewport);
+  
+  const data = useScroll();
+
+  const myData = useMemo(() => ({
+    activeTab: 0 as 0|1|2|3
+  }), [])
 
   const { types, screen } = useMemo(() => {
     return {
@@ -126,263 +98,266 @@ const ProjectsList: FC<{
 
   const ref = useRef<HTMLDivElement>(null);
 
-  const {dampProgress} = useSpring({
-    dampProgress: progress*-750,
-    stiffness: 100,
-    damping: 10,
-  });
-
   useFrame(() => {
-    if(!ref.current) return;
-    ref.current.style.transform = `translateY(${dampProgress.get()}px)`
+    myData.activeTab = Math.round(data.offset*3) as 0|1|2|3;
+
+    if (myData.activeTab !== activeTab) setActiveTab(myData.activeTab)
+    
   })
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setProjectTab(activeTab as 0|1|2|3))
   }, [activeTab, dispatch])
+  const scrollRef = useRef(null);
+  const setProgress = (value: number) => {
+    
+    data.el.scrollTo({
+      top: data.el.scrollHeight*(((value)/4)),
+      behavior: 'smooth'
+    })
+  }
 
   return <>
     <Scroll>
       {/* 3D & VFX */}
       <motion.group position={[-.5, 0, 0]} scale={0.85} animate={activeTab===0 ? "hover" : "rest"}
-      >
-        <motion.group variants={{
-            rest: {
-              y: -10,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .32,
-          }}>
-          <AnimatedImage position={[-6, 1.5, -1]} scale={[4, 3]} url="/assets/images/nike.png" />
-        </motion.group>
-        <motion.group variants={{
-            rest: {
-              y: -15,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .32,
-          }}>
-            <AnimatedImage position={[-7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/vertex.png" />
+        >
+          <motion.group variants={{
+              rest: {
+                y: -30,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .32,
+            }}>
+            <AnimatedImage position={[-6, 1.5, -1]} scale={[4, 3]} url="/assets/images/nike.png" />
           </motion.group>
           <motion.group variants={{
-            rest: {
-              y: -20,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .32,
-          }}>
-            <AnimatedImage position={[-9.25, .5, -3]} scale={[4, 3]} url="/assets/images/honey.png" />
-          </motion.group>
-      </motion.group>
-      <motion.group position={[.5, 0, 0]} scale={0.85} animate={activeTab===0 ? "hover" : "rest"}
-      >
-        <motion.group variants={{
-            rest: {
-              y: -10,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .4,
-          }}>
-          <AnimatedImage position={[6, 1.5, -1]} scale={[4, 3]} url="/assets/images/goli.png" />
+              rest: {
+                y: -35,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .32,
+            }}>
+              <AnimatedImage position={[-7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/vertex.png" />
+            </motion.group>
+            <motion.group variants={{
+              rest: {
+                y: -40,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .32,
+            }}>
+              <AnimatedImage position={[-9.25, .5, -3]} scale={[4, 3]} url="/assets/images/honey.png" />
+            </motion.group>
         </motion.group>
-        <motion.group variants={{
-            rest: {
-              y: -15,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .4,
-          }}>
-            <AnimatedImage position={[7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/rifka.png" />
+        <motion.group position={[.5, 0, 0]} scale={0.85} animate={activeTab===0 ? "hover" : "rest"}
+        >
+          <motion.group variants={{
+              rest: {
+                y: -30,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .4,
+            }}>
+            <AnimatedImage position={[6, 1.5, -1]} scale={[4, 3]} url="/assets/images/goli.png" />
           </motion.group>
           <motion.group variants={{
-            rest: {
-              y: -20,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .4,
-          }}>
-            <AnimatedImage position={[9.25, .5, -3]} scale={[4, 3]} url="/assets/images/nahla.png" />
-          </motion.group>
-      </motion.group>
-      
-      {/* Web development */}
-      <motion.group position={[-.5, 0, 0]} scale={0.85} animate={activeTab===1 ? "hover" : "rest"}
-      >
-        <motion.group variants={{
-            rest: {
-              x: -10,
-            },
-            hover: {
-              x: 0,
-            },
-          }} transition={{
-            duration: .32,
-          }}>
-          <AnimatedImage position={[-6, 1.5, -1]} scale={[4, 3]} url="/assets/images/scene.png" />
+              rest: {
+                y: -35,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .4,
+            }}>
+              <AnimatedImage position={[7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/rifka.png" />
+            </motion.group>
+            <motion.group variants={{
+              rest: {
+                y: -40,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .4,
+            }}>
+              <AnimatedImage position={[9.25, .5, -3]} scale={[4, 3]} url="/assets/images/nahla.png" />
+            </motion.group>
         </motion.group>
-        <motion.group variants={{
-            rest: {
-              x: -15,
-            },
-            hover: {
-              x: 0,
-            },
-          }} transition={{
-            duration: .32,
-          }}>
-            <AnimatedImage position={[-7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/exiade1.png" />
+        
+        {/* Web development */}
+        <motion.group position={[-.5, -height*.40, 0]} scale={0.85} animate={activeTab===1 ? "hover" : "rest"}
+        >
+          <motion.group variants={{
+              rest: {
+                x: -10,
+              },
+              hover: {
+                x: 0,
+              },
+            }} transition={{
+              duration: .32,
+            }}>
+            <AnimatedImage position={[-6, 1.5, -1]} scale={[4, 3]} url="/assets/images/scene.png" />
           </motion.group>
           <motion.group variants={{
-            rest: {
-              x: -20,
-            },
-            hover: {
-              x: 0,
-            },
-          }} transition={{
-            duration: .32,
-          }}>
-            <AnimatedImage position={[-9.25, .5, -3]} scale={[4, 3]} url="/assets/images/building.png" />
-          </motion.group>
-      </motion.group>
-      <motion.group position={[.5, 0, 0]} scale={0.85} animate={activeTab===1 ? "hover" : "rest"}
-      >
-        <motion.group variants={{
-            rest: {
-              x: 10,
-            },
-            hover: {
-              x: 0,
-            },
-          }} transition={{
-            duration: .4,
-          }}>
-          <AnimatedImage position={[6, 1.5, -1]} scale={[4, 3]} url="/assets/images/nft.png" />
+              rest: {
+                x: -15,
+              },
+              hover: {
+                x: 0,
+              },
+            }} transition={{
+              duration: .32,
+            }}>
+              <AnimatedImage position={[-7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/exiade1.png" />
+            </motion.group>
+            <motion.group variants={{
+              rest: {
+                x: -20,
+              },
+              hover: {
+                x: 0,
+              },
+            }} transition={{
+              duration: .32,
+            }}>
+              <AnimatedImage position={[-9.25, .5, -3]} scale={[4, 3]} url="/assets/images/building.png" />
+            </motion.group>
         </motion.group>
-        <motion.group variants={{
-            rest: {
-              x: 15,
-            },
-            hover: {
-              x: 0,
-            },
-          }} transition={{
-            duration: .4,
-          }}>
-            <AnimatedImage position={[7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/grass.png" />
+        <motion.group position={[.5,  -height*.40, 0]} scale={0.85} animate={activeTab===1 ? "hover" : "rest"}
+        >
+          <motion.group variants={{
+              rest: {
+                x: 10,
+              },
+              hover: {
+                x: 0,
+              },
+            }} transition={{
+              duration: .4,
+            }}>
+            <AnimatedImage position={[6, 1.5, -1]} scale={[4, 3]} url="/assets/images/nft.png" />
           </motion.group>
           <motion.group variants={{
-            rest: {
-              x: 20,
-            },
-            hover: {
-              x: 0,
-            },
-          }} transition={{
-            duration: .4,
-          }}>
-            <AnimatedImage position={[9.25, .5, -3]} scale={[4, 3]} url="/assets/images/planet.png" />
-          </motion.group>
-      </motion.group>
- 
-      {/* Design & Branding */}
-       <motion.group position={[-.5, -1, 0]} scale={0.85} animate={activeTab===2 ? "hover" : "rest"}
-      >
-        <motion.group variants={{
-            rest: {
-              y: -10,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .32,
-          }}>
-          <AnimatedImage position={[-6, 1.5, -1]} scale={[4, 3]} url="/assets/images/greek.gif" />
+              rest: {
+                x: 15,
+              },
+              hover: {
+                x: 0,
+              },
+            }} transition={{
+              duration: .4,
+            }}>
+              <AnimatedImage position={[7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/grass.png" />
+            </motion.group>
+            <motion.group variants={{
+              rest: {
+                x: 20,
+              },
+              hover: {
+                x: 0,
+              },
+            }} transition={{
+              duration: .4,
+            }}>
+              <AnimatedImage position={[9.25, .5, -3]} scale={[4, 3]} url="/assets/images/planet.png" />
+            </motion.group>
         </motion.group>
-        <motion.group variants={{
-            rest: {
-              y: -15,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .32,
-          }}>
-            <AnimatedImage position={[-7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/design1.png" />
+  
+        {/* Design & Branding */}
+        <motion.group position={[-.5, -height*.7, 0]} scale={0.85} animate={activeTab===2 ? "hover" : "rest"}
+        >
+          <motion.group variants={{
+              rest: {
+                y: -30,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .32,
+            }}>
+            <AnimatedImage position={[-6, 1.5, -1]} scale={[4, 3]} url="/assets/images/greek.gif" />
           </motion.group>
           <motion.group variants={{
-            rest: {
-              y: -20,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .32,
-          }}>
-            <AnimatedImage position={[-9.25, .5, -3]} scale={[4, 3]} url="/assets/images/disleey.png" />
-          </motion.group>
-      </motion.group>
-      <motion.group position={[.5, -1, 0]} scale={0.85} animate={activeTab===2 ? "hover" : "rest"}
-      >
-        <motion.group variants={{
-            rest: {
-              y: -10,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .4,
-          }}>
-          <AnimatedImage position={[6, 1.5, -1]} scale={[4, 3]} url="/assets/images/change.jpg" />
+              rest: {
+                y: -35,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .32,
+            }}>
+              <AnimatedImage position={[-7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/design1.png" />
+            </motion.group>
+            <motion.group variants={{
+              rest: {
+                y: -40,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .32,
+            }}>
+              <AnimatedImage position={[-9.25, .5, -3]} scale={[4, 3]} url="/assets/images/disleey.png" />
+            </motion.group>
         </motion.group>
-        <motion.group variants={{
-            rest: {
-              y: -15,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .4,
-          }}>
-            <AnimatedImage position={[7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/bv.png" />
+        <motion.group position={[.5, -height*.7, 0]} scale={0.85} animate={activeTab===2 ? "hover" : "rest"}
+        >
+          <motion.group variants={{
+              rest: {
+                y: -30,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .4,
+            }}>
+            <AnimatedImage position={[6, 1.5, -1]} scale={[4, 3]} url="/assets/images/change.jpg" />
           </motion.group>
           <motion.group variants={{
-            rest: {
-              y: -20,
-            },
-            hover: {
-              y: 0,
-            },
-          }} transition={{
-            duration: .4,
-          }}>
-            <AnimatedImage position={[9.25, .5, -3]} scale={[4, 3]} url="/assets/images/motto.jpg" />
-          </motion.group>
-      </motion.group>
-
+              rest: {
+                y: -35,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .4,
+            }}>
+              <AnimatedImage position={[7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/bv.png" />
+            </motion.group>
+            <motion.group variants={{
+              rest: {
+                y: -40,
+              },
+              hover: {
+                y: 0,
+              },
+            }} transition={{
+              duration: .4,
+            }}>
+              <AnimatedImage position={[9.25, .5, -3]} scale={[4, 3]} url="/assets/images/motto.jpg" />
+            </motion.group>
+        </motion.group>
       {/* UI/UX */}
       {/* <motion.group position={[-.5, -1, 0]} scale={0.85} animate={activeTab===3 ? "hover" : "rest"}
       >
@@ -510,13 +485,13 @@ const Category: FC<{
   color,
   link
 }) => {
-
+  
   const [activeHover, setActiveHover] = useState(false);
   
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between mb-10">
       <div className=""></div>
-      <div className="group-hover mt-28" onMouseEnter={() => {setActiveHover(true)}} onMouseLeave={() => {setActiveHover(false)}} onClick={() => {setProgress(((index)/4)+0.09)}} >
+      <div className="group-hover mt-28" onMouseEnter={() => {setActiveHover(true)}} onMouseLeave={() => {setActiveHover(false)}} onClick={() => {setProgress(index)}} >
         <Title color={color} title={title} active={active || activeHover} />
         <div className={`flex justify-center mt-6 ${(active || activeHover) ? 'text-white' : 'text-[#666]'}`}>
           {tags.map((tag, index) => <div key={index} className="flex py-2 px-4 justify-center items-center gap-2.5 bg-[#333] rounded-3xl">
