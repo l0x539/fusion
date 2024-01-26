@@ -24,6 +24,12 @@ module.exports = {
         'soy-rada': "url('/assets/images/soyrada.png')",
         'lazo-brand': "linear-gradient(181deg, #000 -22.74%, rgba(0, 0, 0, 0.00) 22.94%, rgba(255, 212, 245, 0.37) 57.18%, #FFD4F5 99.07%)"
       },
+      colors: {
+        'web-yellow': '#FFF852',
+        'design-blue': '#1B71F2',
+        'uix-red': '#f50808',
+        'vfx-purple': '#6E3F52',
+      },
       fontFamily: {
         main: ['var(--font-helvetica)', 'Helvetica', 'Raleway'],
         flink: ['var(--font-inter)', 'Inter', 'Helvetica', 'Raleway'],

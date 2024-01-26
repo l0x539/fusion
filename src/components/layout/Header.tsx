@@ -36,7 +36,7 @@ const Header = () => {
 
   const headerOpacity = isScrolled ? 1 : 0;
 
-  return (<header className={`fixed top-0 z-80 w-[100dvw] px-6 tablet:px-16 desktop:px-28 flex justify-between z-[100] transition-all pointer-events-auto bg-black ${(pathname.startsWith('/portfolio') || pathname.startsWith('/partners')) && isScrolled ? 'bg-opacity-95' : 'bg-opacity-0'}`}>
+  return (<header className={`fixed top-0 z-80 w-[100dvw] px-6 tablet:px-16 desktop:px-28 flex justify-between z-[100] transition-all pointer-events-auto bg-black ${(pathname.startsWith('/portfolio') || pathname.startsWith('/culture')) && isScrolled ? 'bg-opacity-95' : 'bg-opacity-0'}`}>
     <Link href={searchParams.get('demo') ? ((pathname.startsWith('/services/') ? '/services?' : '/?') + createQueryString('demo', `${searchParams.get('demo')}`)) : (pathname.startsWith('/services/') ? '/services' : '/')} className="py-12">
       {pathname.startsWith('/services/') && !pathname.startsWith('/services/our-method') ? 
       <CloseServices /> :

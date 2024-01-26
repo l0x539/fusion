@@ -8,32 +8,32 @@ import Image from "next/image";
 export const TABS = [
   {
     label: 'research',
-    title: 'RESEARCH & DISCOVERY',
-    icon: <Image src={"/assets/images/research-and-development.png"} className="invert" width={32} height={32} alt="RESEARCH & DISCOVERY" />,
+    title: 'IMMERSION & INSIGHT',
+    icon: <Image src={"/assets/images/research-and-development.png"} className="invert" width={32} height={32} alt="IMMERSION & INSIGHT" />,
     content: <OurMethodTab tab={0} />
   },
   {
     label: 'strategy',
-    title: 'STRATEGY & DIRECTION',
-    icon: <Image src={"/assets/images/seo.png"} className="invert" width={32} height={32} alt="RESEARCH & DISCOVERY" />,
+    title: 'STRATEGY & INNOVATION',
+    icon: <Image src={"/assets/images/seo.png"} className="invert" width={32} height={32} alt="STRATEGY & INNOVATION" />,
     content: <OurMethodTab tab={1} />
   },
   {
     label: 'design',
-    title: 'DESIGN & DEVELOPMENT',
-    icon: <Image src={"/assets/images/coding.png"} className="invert" width={32} height={32} alt="RESEARCH & DISCOVERY" />,
+    title: 'CREATION & CRAFTSMANSHIP',
+    icon: <Image src={"/assets/images/coding.png"} className="invert" width={32} height={32} alt="CREATION & CRAFTSMANSHIP" />,
     content: <OurMethodTab tab={2} />
   },
   {
     label: 'finesse',
-    title: 'FINESSE & LAUNCH',
-    icon: <Image src={"/assets/images/startup.png"} className="invert" width={32} height={32} alt="RESEARCH & DISCOVERY" />,
+    title: 'REFINEMENT & LAUNCH',
+    icon: <Image src={"/assets/images/startup.png"} className="invert" width={32} height={32} alt="REFINEMENT & LAUNCH" />,
     content: <OurMethodTab tab={3} />
   },
   {
     label: 'support',
-    title: 'SUPPORT & MANAGEMENT',
-    icon: <Image src={"/assets/images/support.png"} className="invert" width={32} height={32} alt="RESEARCH & DISCOVERY" />,
+    title: 'PARTNERSHIP & SUPPORT',
+    icon: <Image src={"/assets/images/support.png"} className="invert" width={32} height={32} alt="PARTNERSHIP & SUPPORT" />,
     content: <OurMethodTab tab={4} />
   },
 ];

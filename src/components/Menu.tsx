@@ -41,22 +41,36 @@ const MenuDesktop = () => {
       </HeaderLink>
     </li>
     <li className="ml-14">
+      <HeaderLink boldHover={searchParams.has('boldhover')} active={pathname.startsWith('/projects')} href={searchParams.get('demo') ? ('/projects?' + createQueryString('demo', `${searchParams.get('demo')}`)) : "/projects"}>
+        Portfolio
+      </HeaderLink>
+    </li>
+    <li className="ml-14">
       <HeaderLink boldHover={searchParams.has('boldhover')} active={pathname.startsWith('/culture')} href={searchParams.get('demo') ? ('/culture?' + createQueryString('demo', `${searchParams.get('demo')}`)) : "/culture"}>
-        Culture
+        About Us
       </HeaderLink>
     </li>
     <li className="ml-14">
-      <HeaderLink boldHover={searchParams.has('boldhover')} active={pathname.startsWith('/partners')} href={searchParams.get('demo') ? ('/partners?' + createQueryString('demo', `${searchParams.get('demo')}`)) : "/partners"}>
-        Partners
-      </HeaderLink>
-    </li>
-    <li className="ml-14">
-      <HeaderLink boldHover={searchParams.has('boldhover')} active={pathname.startsWith('/contact')} href={searchParams.get('demo') ? ('/contact?' + createQueryString('demo', `${searchParams.get('demo')}`)) : "/contact"}>
-        Contact
-      </HeaderLink>
+      <SpecialLink boldHover={searchParams.has('boldhover')} active={pathname.startsWith('/contact')} href={searchParams.get('demo') ? ('/contact?' + createQueryString('demo', `${searchParams.get('demo')}`)) : "/contact"}>
+        Get in touch
+      </SpecialLink>
     </li>
   </ul>);
 };
+
+const SpecialLink: FC<{
+  href: string;
+  children: ReactNode;
+  boldHover?: boolean;
+  active?: boolean;
+}> = ({
+  href,
+  children,
+  active = false,
+  boldHover = false,
+}) => {
+  return (<Link className={`uppercase border rounded-full px-4 py-3 ${boldHover ? 'opacity-100' : (active ? 'opacity-100' : 'opacity-50')} ${boldHover && active? 'font-bold' : 'font-normal'} text-sm ${boldHover ? 'hover:font-bold' : 'hover:opacity-100'} transition-all`} href={href}>{children}</Link>);
+}
 
 const HeaderLink: FC<{
   href: string;
@@ -152,8 +166,8 @@ const MenuMobile = () => {
             animate={isMenuOpen ? 'open' : 'closed'}
             transition={{delay: 0.1}}
           >
-            <NavLink href={searchParams.get('demo') ? ('/culture?' + createQueryString('demo', `${searchParams.get('demo')}`)) : '/culture'}>
-              Culture
+            <NavLink href={'/services'}>
+              Services
             </NavLink>
           </motion.li>
           <motion.li
@@ -161,8 +175,8 @@ const MenuMobile = () => {
             animate={isMenuOpen ? 'open' : 'closed'}
             transition={{delay: 0.2}}
           >
-            <NavLink href={searchParams.get('demo') ? ('/services?' + createQueryString('demo', `${searchParams.get('demo')}`)) : '/services'}>
-              Services
+            <NavLink href={'/projects'}>
+              Portfolio
             </NavLink>
           </motion.li>
           <motion.li
@@ -170,8 +184,8 @@ const MenuMobile = () => {
             animate={isMenuOpen ? 'open' : 'closed'}
             transition={{delay: 0.3}}
           >
-            <NavLink href={searchParams.get('demo') ? ('/partners?' + createQueryString('demo', `${searchParams.get('demo')}`)) : '/partners'}>
-              Partners
+            <NavLink href={searchParams.get('demo') ? ('/culture?' + createQueryString('demo', `${searchParams.get('demo')}`)) : '/culture'}>
+              Culture
             </NavLink>
           </motion.li>
           <motion.li

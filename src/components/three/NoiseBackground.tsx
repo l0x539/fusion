@@ -10,6 +10,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { selectGl } from "@/store/features/gl/glSlice";
 import { useAppSelector } from "@/store/hooks";
 import { useSpring, config } from "@react-spring/three";
+import { selectApp } from "@/store/features/app/appSlice";
 
 const NoiseBackground: FC<{
 }> = () => {
@@ -17,6 +18,7 @@ const NoiseBackground: FC<{
   const bgRef: any = useRef();
   const {progress} = useAppSelector(selectGl);
   const pathname = usePathname();
+  const { projectTab } = useAppSelector(selectApp);
 
   const searchParams = useSearchParams();
 
@@ -229,8 +231,6 @@ const NoiseBackground: FC<{
     let cycleColors = 0;
     if (COMING_SOON) {
       interval = setInterval(() => {
-        console.log(cycleColors);
-        
         switch ((cycleColors+1)%3) {
           case 0:
             color1.copy(new Color('#439393'));
@@ -300,29 +300,144 @@ const NoiseBackground: FC<{
         r: uColor3.r/255, g: uColor3.g/255, b: uColor3.b/255
       }
     } else if (!COMING_SOON && dp?.path) {
-      v3.copy(dp.bg.color1)
-      color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
-      shaderMaterialRef.current.uniforms.uColor1.value = {
-        r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
-        g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
-        b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
-      };
-      v3.copy(dp.bg.color2)
-      color.set(shaderMaterialRef.current.uniforms.uColor2.value.r, shaderMaterialRef.current.uniforms.uColor2.value.g, shaderMaterialRef.current.uniforms.uColor2.value.b)
-      shaderMaterialRef.current.uniforms.uColor2.value = {
-        r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
-        g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
-        b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
-      };
-      v3.copy(dp.bg.color3)
-      color.set(shaderMaterialRef.current.uniforms.uColor3.value.r, shaderMaterialRef.current.uniforms.uColor3.value.g, shaderMaterialRef.current.uniforms.uColor3.value.b)
-      shaderMaterialRef.current.uniforms.uColor3.value = {
-        r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
-        g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
-        b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
-      };
-      // v3.set(shaderMaterialRef.current.uniforms.uAlpha.value, 0, 0);
-      shaderMaterialRef.current.uniforms.uAlpha.value = dp.bg.alpha;
+      if (dp.projects) {
+        // console.log(projectTab);
+        
+        if (pathname.startsWith('/projects/3d') || (pathname==="/projects" && projectTab === 0)) {
+          color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
+          v3.copy(dp.projects[0].color1);
+          shaderMaterialRef.current.uniforms.uColor1.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+          
+          color.set(shaderMaterialRef.current.uniforms.uColor2.value.r, shaderMaterialRef.current.uniforms.uColor2.value.g, shaderMaterialRef.current.uniforms.uColor2.value.b)
+          v3.copy(dp.projects[0].color2);
+          shaderMaterialRef.current.uniforms.uColor2.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+          
+          color.set(shaderMaterialRef.current.uniforms.uColor3.value.r, shaderMaterialRef.current.uniforms.uColor3.value.g, shaderMaterialRef.current.uniforms.uColor3.value.b)
+          v3.copy(dp.projects[0].color3);
+          shaderMaterialRef.current.uniforms.uColor3.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+
+          shaderMaterialRef.current.uniforms.uAlpha.value = dp.projects[0].alpha;
+
+        } else if (pathname.startsWith('/projects/webdev') || (pathname==="/projects" && projectTab === 1)) {
+          color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
+          v3.copy(dp.projects[1].color1);
+          shaderMaterialRef.current.uniforms.uColor1.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+          
+          color.set(shaderMaterialRef.current.uniforms.uColor2.value.r, shaderMaterialRef.current.uniforms.uColor2.value.g, shaderMaterialRef.current.uniforms.uColor2.value.b)
+          v3.copy(dp.projects[1].color2);
+          shaderMaterialRef.current.uniforms.uColor2.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+          
+          color.set(shaderMaterialRef.current.uniforms.uColor3.value.r, shaderMaterialRef.current.uniforms.uColor3.value.g, shaderMaterialRef.current.uniforms.uColor3.value.b)
+          v3.copy(dp.projects[1].color3);
+          shaderMaterialRef.current.uniforms.uColor3.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+
+          shaderMaterialRef.current.uniforms.uAlpha.value = dp.projects[1].alpha;
+
+        } else if (pathname.startsWith('/projects/design') || (pathname==="/projects" && projectTab === 2)) {
+          color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
+          v3.copy(dp.projects[2].color1);
+          shaderMaterialRef.current.uniforms.uColor1.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+          
+          color.set(shaderMaterialRef.current.uniforms.uColor2.value.r, shaderMaterialRef.current.uniforms.uColor2.value.g, shaderMaterialRef.current.uniforms.uColor2.value.b)
+          v3.copy(dp.projects[2].color2);
+          shaderMaterialRef.current.uniforms.uColor2.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+          
+          color.set(shaderMaterialRef.current.uniforms.uColor3.value.r, shaderMaterialRef.current.uniforms.uColor3.value.g, shaderMaterialRef.current.uniforms.uColor3.value.b)
+          v3.copy(dp.projects[2].color3);
+          shaderMaterialRef.current.uniforms.uColor3.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+
+          shaderMaterialRef.current.uniforms.uAlpha.value = dp.projects[2].alpha;
+
+        } else if (pathname.startsWith('/projects/uix') || (pathname==="/projects" && projectTab === 3)) {
+          color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
+          v3.copy(dp.projects[3].color1);
+          shaderMaterialRef.current.uniforms.uColor1.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+          
+          color.set(shaderMaterialRef.current.uniforms.uColor2.value.r, shaderMaterialRef.current.uniforms.uColor2.value.g, shaderMaterialRef.current.uniforms.uColor2.value.b)
+          v3.copy(dp.projects[3].color2);
+          shaderMaterialRef.current.uniforms.uColor2.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+          
+          color.set(shaderMaterialRef.current.uniforms.uColor3.value.r, shaderMaterialRef.current.uniforms.uColor3.value.g, shaderMaterialRef.current.uniforms.uColor3.value.b)
+          v3.copy(dp.projects[3].color3);
+          shaderMaterialRef.current.uniforms.uColor3.value = {
+            r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+            g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+            b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+          };
+
+          shaderMaterialRef.current.uniforms.uAlpha.value = dp.projects[3].alpha;
+
+        }
+        
+      } else {
+        v3.copy(dp.bg.color1)
+        color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)
+        shaderMaterialRef.current.uniforms.uColor1.value = {
+          r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+          g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+          b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+        };
+        v3.copy(dp.bg.color2)
+        color.set(shaderMaterialRef.current.uniforms.uColor2.value.r, shaderMaterialRef.current.uniforms.uColor2.value.g, shaderMaterialRef.current.uniforms.uColor2.value.b)
+        shaderMaterialRef.current.uniforms.uColor2.value = {
+          r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+          g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+          b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+        };
+        v3.copy(dp.bg.color3)
+        color.set(shaderMaterialRef.current.uniforms.uColor3.value.r, shaderMaterialRef.current.uniforms.uColor3.value.g, shaderMaterialRef.current.uniforms.uColor3.value.b)
+        shaderMaterialRef.current.uniforms.uColor3.value = {
+          r: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).r,
+          g: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).g,
+          b: color.lerp((color.clone()).setFromVector3(v3), searchParams.has('controls') ? lerpScroll : scrollLerp).b
+        };
+        // v3.set(shaderMaterialRef.current.uniforms.uAlpha.value, 0, 0);
+        shaderMaterialRef.current.uniforms.uAlpha.value = dp.bg.alpha;
+      }
     } else if (!COMING_SOON) {
       v3.copy(colors1.getPoint(progress))
       color.set(shaderMaterialRef.current.uniforms.uColor1.value.r, shaderMaterialRef.current.uniforms.uColor1.value.g, shaderMaterialRef.current.uniforms.uColor1.value.b)

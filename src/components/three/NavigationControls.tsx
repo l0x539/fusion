@@ -1,4 +1,4 @@
-import { setScrollBottomHint, setScrolled } from "@/store/features/app/appSlice";
+import { selectApp, setScrollBottomHint, setScrolled } from "@/store/features/app/appSlice";
 import { selectGl, setProgress } from "@/store/features/gl/glSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { COMING_SOON, disabledPages, progressSpeed, scrollBottom, steps } from "@/utils/constants";
@@ -18,6 +18,7 @@ const NavigationControls: FC<{
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const {progress} = useAppSelector(selectGl);
+  const {scrollHintBottom} = useAppSelector(selectApp);
   const dispatch = useAppDispatch();
 
   const searchParams = useSearchParams();
@@ -48,8 +49,15 @@ const NavigationControls: FC<{
       ));
     }
     
-    if (pathname == '/partners') {
+    if (pathname == '/culture') {
       if ((window.innerHeight + Math.round(window.scrollY)) >= (mainRef.current?.offsetHeight??0)) {
+        if (first && y > 0 && scrollHintBottom) {
+          router.push('/contact', 
+          {
+            scroll: false
+          });
+          dispatch(setProgress(steps.find(s => s.path === '/contact')?.range[0]??progress))
+        }
         dispatch(setScrollBottomHint(true))
       } else {
         dispatch(setScrollBottomHint(false))
@@ -152,7 +160,7 @@ const NavigationControls: FC<{
     },
   });
 
-  return <main {...(COMING_SOON ? {} : bind())} className={`touch-pan-y absolute min-h-[100dvh] min-w-[100dvw] overscroll-none overflow-hidden ${(["/", "/contact", "/culture"].includes(pathname) || pathname.startsWith('/services'))  ? 'fullScreen mainWrapper' : 'mainWrapper'}`} ref={mainRef}>
+  return <main {...(COMING_SOON ? {} : bind())} className={`touch-pan-y absolute min-h-[100dvh] min-w-[100dvw] overscroll-none overflow-hidden ${(["/", "/contact", "/projects"].includes(pathname) || pathname.startsWith('/services'))  ? 'fullScreen mainWrapper' : 'mainWrapper'}`} ref={mainRef}>
     {children}
   </main>
 };

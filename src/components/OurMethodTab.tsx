@@ -17,36 +17,36 @@ const OurMethodTab: FC<{
       tab === 2 ? 'transition-transform w-fit	h-fit':
       tab === 3 ? 'transition-transform tablet:translate-y-[55dvh] desktop:translate-y-[8dvh] w-fit	h-fit': 
       'transition-transform tablet:translate-y-[40dvh] w-fit	h-fit',
-      title: tab === 0 ? 'Research\n&Discovery' :  
-      tab === 1 ? 'Strategy\n& Direction' :
-      tab === 2 ? 'Design\n& Development':
-      tab === 3 ? 'Finesse\n& Launch': 
-      'Support\n& Management',
+      title: tab === 0 ? 'Immersion\n&Insight' :  
+      tab === 1 ? 'Strategy\n& Innovation' :
+      tab === 2 ? 'Creation\n& Craftsmanship':
+      tab === 3 ? 'Refinement\n& Launch': 
+      'Partnership\n& Support',
       ourProcess: tab === 0 ? ' transition-transform tablet:-translate-y-0 translate-x-[0vw] w-fit	h-fit' :  
       tab === 1 ? ' transition-transform tablet:-translate-y-32 desktop:-translate-y-60 translate-x-[0vw] desktop:translate-x-[30vw] w-fit	h-fit' :
       tab === 2 ? ' transition-transform tablet:-translate-y-8 desktop:-translate-y-0 translate-x-[0vw] w-fit	h-fit':
       tab === 3 ? ' transition-transform tablet:-translate-y-32 translate-x-[0vw] desktop:translate-x-[30vw] w-fit	h-fit': 
       ' transition-transform tablet:-translate-y-16 desktop:-translate-y-60 translate-x-[0vw] desktop:translate-x-[30vw] w-fit	h-fit',
       description: tab === 0 ? <><p className="text-sm tablet:text-base desktop:mr-0 desktop:ml-16 desktop:w-[410px] text-white font-light">
-      Every project that we work on starts with a period of research and discovery. This involves looking into your goals and objectives, researching your industry and target audience, competitors, latest trends and insights. We also look into existing brand collateral to ensure that any new design or strategy is in line with your existing messaging.
+      Dive deep into the essence of your project through immersive research and insightful discovery. We embark on a journey to understand your unique objectives, audience dynamics, market trends, and competitor landscape. By delving into your brand{"'"}s DNA and industry nuances, we lay the groundwork for a strategic approach.
       </p></> :  
       tab === 1 ? <><p className="text-sm tablet:text-base desktop:mr-0 desktop:ml-16 desktop:w-[410px] text-white font-light">
-      Once we understand the project goals, our next step is to begin developing a comprehensive brand strategy and creative direction.<br /> <br />We will craft a blueprint if needed that guides decisions related to messaging, design, user experience, search marketing, audience segmentation, and more. This ensures all decisions are made in line with your needs and that each deliverable will contribute to its success
+      Harnessing the insights gleaned, we craft a bespoke strategy that serves as the compass guiding our creative endeavors. Our innovative approach ensures that every facet of your project aligns with your overarching goals and resonates with your target audience. From visionary concepts to actionable plans, we pave the way for transformative outcomes.
       </p></> :
       tab === 2 ? <><p className="text-sm tablet:text-base desktop:mr-0 desktop:ml-16 mb-8 desktop:w-[410px] text-white font-light">
-      Welcome to the enchanting realm where the magic unfolds! The third step in our process is where the real creation begins.<br /> <br />We start from scratch, building a captivating brand identity, designing a user-friendly website, curating compelling content, and launching strategic search marketing campaigns.
+      Enter the realm of boundless creativity and meticulous craftsmanship. Here, ideas spring to life as we sculpt captivating brand identities, sculpt seamless user experiences, and weave compelling narratives. With precision and passion, we breathe life into your vision, crafting assets that captivate and inspire.
       </p>
       <p className="text-sm tablet:text-base hidden tablet:visible desktop:mr-0 desktop:ml-18 desktop:w-[410px] text-white font-light">
       Every aspect is meticulously tailored to align with your objectives and capture the hearts of your target audience. Get ready to witness the transformation and see your vision come to life in the most extraordinary way.
       </p></>:
       tab === 3 ? <><p className="text-sm tablet:text-base desktop:ml-16 desktop:w-[410px] text-white font-light">
-      Moving onto the fourth and final step of our process, it{"'"}s time to add those finishing touches. Any additional tweaks or adjustments that may be required will be carefully addressed at this stage. <br/><br/> Once everything has been approved, we{"'"}re all set for the big launch! Rest assured, We{"'"}ll provide you with all the essential brand assets and files, including logos, social media templates, font files, and brand guidelines. 
+      As we near the culmination of our journey, we refine and polish every detail to perfection. Through iterative refinement and meticulous quality assurance, we ensure that your project exudes excellence from every angle. With our eyes set on the horizon, we prepare for a triumphant launch that sets the stage for your brand{"'"}s ascent.
       <br/><br/>
       <span className="text-sm tablet:text-base hidden tablet:visible">I{"'"}m fully committed to ensuring that you have all the necessary elements at your fingertips to achieve remarkable success on the day of your launch.</span>
 
       </p></>: 
       <><p className="text-sm tablet:text-base desktop:ml-16 desktop:w-[410px] text-white font-light">
-      We offer extensive training and dedicated support to assist my clients in implementing their brand or product and digital strategy effectively. With our comprehensive services, you can trust that your product will thrive with sustained success.
+      Beyond the launch, our commitment to your success endures. We stand by your side, offering unwavering support and guidance as you navigate the digital landscape. From ongoing maintenance to strategic insights, we{"'"}re here to empower you on your journey to sustained growth and prosperity.
       </p></>,
     }
   }, [tab])

@@ -206,12 +206,12 @@ export const Footer: FC<{
               </FooterLinkPartners>
             </li>
             <li className="mb-1">
-              <FooterLinkPartners href={'/culture'}>
+              <FooterLinkPartners href={'/projects'}>
                 Culture
               </FooterLinkPartners>
             </li>
             <li className="mb-1">
-              <FooterLinkPartners href={'/partners'}>
+              <FooterLinkPartners href={'/culture'}>
                 Partners
               </FooterLinkPartners>
             </li>
@@ -226,7 +226,7 @@ export const Footer: FC<{
               </FooterLinkPartners>
             </li>
             <li className="mb-1">
-              <FooterLinkPartners href={'/culture'}>
+              <FooterLinkPartners href={'/projects'}>
                 info@fusion.bi
               </FooterLinkPartners>
             </li>
@@ -244,7 +244,7 @@ export const Footer: FC<{
               </FooterLinkPartners>
             </li>
             <li className="mb-1">
-              <FooterLinkPartners href={'/culture'}>
+              <FooterLinkPartners href={'/projects'}>
                 info@fusion.bi
               </FooterLinkPartners>
             </li>
