@@ -58,8 +58,26 @@ const helvetica = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Fusion',
-  description: 'Fusion Lab Website',
+  title: 'Fusion - Digital Innovation Experts',
+  description: 'Explore cutting-edge solutions in web development, design, and digital innovation with Fusion. We specialize in creating immersive experiences and transformative digital solutions to drive your business forward.',
+  keywords: "Web Development, Design Solutions, Digital Innovation, Immersive Experiences, Creative Design, User-Centric Design, Custom Software Development, Technology Consulting, Brand Strategy, User Experience Optimization",
+  robots: 'index, follow',
+  openGraph: {
+    type: "website",
+    url: "https://fusion.bi",
+    title: "Fusion - Digital Innovation Experts",
+    description: "Explore cutting-edge solutions in web development, design, and digital innovation with Fusion. We specialize in creating immersive experiences and transformative digital solutions to drive your business forward.",
+    images: "https://fusion.bi/assets/images/wallpaper.jpg",
+    videos: "https://fusion.bi/assets/images/incode.mp4"
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "https://fusion.bi",
+    title: "Fusion - Digital Innovation Experts",
+    description: "Explore cutting-edge solutions in web development, design, and digital innovation with Fusion. We specialize in creating immersive experiences and transformative digital solutions to drive your business forward.",
+    images: "https://fusion.bi/assets/images/wallpaper.jpg",
+    creator: "fusion.bi"
+  },
   viewport: {
     width: 'device-width',
     initialScale: 1,
