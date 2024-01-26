@@ -489,9 +489,9 @@ const Category: FC<{
   const [activeHover, setActiveHover] = useState(false);
   
   return (
-    <div className="flex justify-between mb-10">
+    <div className="flex justify-between mb-0 md:mb-10">
       <div className=""></div>
-      <div className="group-hover mt-28" onMouseEnter={() => {setActiveHover(true)}} onMouseLeave={() => {setActiveHover(false)}} onClick={() => {setProgress(index)}} >
+      <div className="group-hover mt-16 md:mt-28" onMouseEnter={() => {setActiveHover(true)}} onMouseLeave={() => {setActiveHover(false)}} onClick={() => {setProgress(index)}} >
         <Title color={color} title={title} active={active || activeHover} />
         <div className={`flex justify-center mt-6 ${(active || activeHover) ? 'text-white' : 'text-[#666]'}`}>
           {tags.map((tag, index) => <div key={index} className="flex py-2 px-4 justify-center items-center gap-2.5 bg-[#333] rounded-3xl">
