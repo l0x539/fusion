@@ -1283,7 +1283,7 @@ export const steps = [
       alpha: Math.random()*0.2
     },
     range: [0.475, 0.511],
-    stale: 0.497,
+    stale: 0.475 + (-0.475 + 0.511)*.3,
     path: '/services/our-method/5',
     bubbles: [
       {
@@ -1361,7 +1361,7 @@ export const steps = [
       alpha: 1
     },
     range: [0.578, 0.88],
-    stale: 0.771,
+    stale: 0.475 + (-0.475 + 0.511)*.3,
     path: '/services/our-method/5',
     bubbles: [
       {
