@@ -38,7 +38,7 @@ const Background: FC<{
   return <>
     {COMING_SOON ? <ComingSoonText /> : <Texts lerpScroll={lerpScroll} />}
     {(gpuTier > 0) && isReady ? <>
-      <Bubble lerpScroll={lerpScroll} detail={gpuTier} />
+      <Bubble lerpScroll={lerpScroll} index={0} detail={gpuTier} />
       {COMING_SOON ? <></> : <Bubble lerpScroll={lerpScroll} index={1} detail={gpuTier} />}
     </>: <></>}
     {COMING_SOON ? <></> : <Images lerpScroll={lerpScroll} />}
@@ -198,7 +198,7 @@ const Bubble: FC<{
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
 
   const {progress} = useAppSelector(selectGl);
-
+  
   const screen = useMemo(() => (isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop') as 'tablet' | 'mobile' | 'desktop', [isMobile, isTablet])
   const {
     defaultUniforms,
@@ -411,17 +411,14 @@ const Bubble: FC<{
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const scalarKey = useMemo(() => isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop', [isMobile, isTablet])
+  const {isDisabledPage, hideBubble} = useMemo(() => {
+    return {
+      isDisabledPage: disabledPages.some((p) => pathname.startsWith(p.path)),
+      hideBubble: disabledPages.find((p) => pathname.startsWith(p.path))?.hideBubble
+    }
+  }, [pathname]);
 
-  const adjustedCurve = useMemo(() => ({
-    path: path.clone(),
-    active: false,
-    destStale: 0,
-    fromStale: 0,
-    fromRange: [0, 0],
-    destRange: [0, 0]
-  }), [path])
-  const paths = steps.map(s => s.path);
+  const scalarKey = useMemo(() => isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop', [isMobile, isTablet])
 
   useFrame(({
     clock,
@@ -434,10 +431,18 @@ const Bubble: FC<{
     mesh.current.scale.setScalar(mediaBreakPoints[screen].bubbleR);
     const position = path.getPoint(progress);
     const positionView = position.clone().set(position.x * postionScalar[scalarKey].x, position.y * postionScalar[scalarKey].y, position.z);
-    if (position.y < -15) {
+    if (hideBubble || (position.y < -15 && !isDisabledPage)) {
+      if (hideBubble) {
+        mesh.current.visible = false;
+      } else {
+        mesh.current.visible = true;
+      }
       mesh.current.position.copy(position);
       return;
     }
+
+    
+    
     
     const time = clock.getElapsedTime();
 
@@ -458,10 +463,7 @@ const Bubble: FC<{
     mesh.current.geometry.attributes.position.needsUpdate = true;
     
     // Bubble Position
-    mesh.current.position.lerp(positionView, searchParams.has('controls') ? lerpScroll : scrollLerp)
-    if (disabledPages.some(p => pathname.startsWith(p.path))) {
-      mesh.current.position.lerp(disabledPages.findLast(p => pathname.startsWith(p.path))?.bubbles[index].position?? new Vector3, searchParams.has('controls') ? lerpScroll : scrollLerp)
-    }
+      
     if (isMenuOpen) {
       mesh.current.position.lerp(new Vector3(2, -5, 4), searchParams.has('controls') ? lerpScroll : scrollLerp)
     }
@@ -509,6 +511,43 @@ const Bubble: FC<{
 
     // }
 
+    // Step uniforms
+    if (isDisabledPage) {
+      const settings = disabledPages.findLast(p => pathname.startsWith(p.path))
+      mesh.current.position.lerp(settings?.bubbles[index].position?? new Vector3, searchParams.has('controls') ? lerpScroll : scrollLerp);
+
+      mesh.current.material.uniforms.uChromaticAberration.value = settings?.uniforms?.chromaticAberration;
+      mesh.current.material.uniforms.uDiffuseness.value = settings?.uniforms?.diffuseness;
+      mesh.current.material.uniforms.uFresnelPower.value = settings?.uniforms?.fresnelPower;
+      mesh.current.material.uniforms.uIorB.value = settings?.uniforms?.iorB;
+      mesh.current.material.uniforms.uIorC.value = settings?.uniforms?.iorC;
+      mesh.current.material.uniforms.uIorG.value = settings?.uniforms?.iorG;
+      mesh.current.material.uniforms.uIorP.value = settings?.uniforms?.iorP;
+      mesh.current.material.uniforms.uIorR.value = settings?.uniforms?.iorR;
+      mesh.current.material.uniforms.uIorY.value = settings?.uniforms?.iorY;
+      mesh.current.material.uniforms.uLight.value = settings?.uniforms?.light;
+      mesh.current.material.uniforms.uRefractPower.value = settings?.uniforms?.refraction;
+      mesh.current.material.uniforms.uSaturation.value = settings?.uniforms?.saturation;
+      mesh.current.material.uniforms.uShininess.value = settings?.uniforms?.shininess;
+      mesh.current.material.needsUpdate = true;
+    } else {
+      mesh.current.position.lerp(positionView, searchParams.has('controls') ? lerpScroll : scrollLerp)
+      mesh.current.material.uniforms.uChromaticAberration.value = adjustedUniforms.chromaticAberration.getPoint(progress).x;
+      mesh.current.material.uniforms.uDiffuseness.value = adjustedUniforms.diffuseness.getPoint(progress).x;
+      mesh.current.material.uniforms.uFresnelPower.value = adjustedUniforms.fresnelPower.getPoint(progress).x;
+      mesh.current.material.uniforms.uIorB.value = adjustedUniforms.iorB.getPoint(progress).x;
+      mesh.current.material.uniforms.uIorC.value = adjustedUniforms.iorC.getPoint(progress).x;
+      mesh.current.material.uniforms.uIorG.value = adjustedUniforms.iorG.getPoint(progress).x;
+      mesh.current.material.uniforms.uIorP.value = adjustedUniforms.iorP.getPoint(progress).x;
+      mesh.current.material.uniforms.uIorR.value = adjustedUniforms.iorR.getPoint(progress).x;
+      mesh.current.material.uniforms.uIorY.value = adjustedUniforms.iorY.getPoint(progress).x;
+      mesh.current.material.uniforms.uLight.value = adjustedUniforms.light.getPoint(progress);
+      mesh.current.material.uniforms.uRefractPower.value = adjustedUniforms.refraction.getPoint(progress).x;
+      mesh.current.material.uniforms.uSaturation.value = adjustedUniforms.saturation.getPoint(progress).x;
+      mesh.current.material.uniforms.uShininess.value = adjustedUniforms.shininess.getPoint(progress).x;
+
+    }
+
     // Bubble Rotation
     const vec = v3.clone().setFromEuler(mesh.current.rotation);
     const destVec = rotation.getPoint(progress);
@@ -544,23 +583,7 @@ const Bubble: FC<{
     
     gl.setRenderTarget(null)
 
-
-    // Step uniforms
-    mesh.current.material.uniforms.uChromaticAberration.value = adjustedUniforms.chromaticAberration.getPoint(progress).x;
-    mesh.current.material.uniforms.uDiffuseness.value = adjustedUniforms.diffuseness.getPoint(progress).x;
-    mesh.current.material.uniforms.uFresnelPower.value = adjustedUniforms.fresnelPower.getPoint(progress).x;
-    mesh.current.material.uniforms.uIorB.value = adjustedUniforms.iorB.getPoint(progress).x;
-    mesh.current.material.uniforms.uIorC.value = adjustedUniforms.iorC.getPoint(progress).x;
-    mesh.current.material.uniforms.uIorG.value = adjustedUniforms.iorG.getPoint(progress).x;
-    mesh.current.material.uniforms.uIorP.value = adjustedUniforms.iorP.getPoint(progress).x;
-    mesh.current.material.uniforms.uIorR.value = adjustedUniforms.iorR.getPoint(progress).x;
-    mesh.current.material.uniforms.uIorY.value = adjustedUniforms.iorY.getPoint(progress).x;
-    mesh.current.material.uniforms.uLight.value = adjustedUniforms.light.getPoint(progress);
-    mesh.current.material.uniforms.uRefractPower.value = adjustedUniforms.refraction.getPoint(progress).x;
-    mesh.current.material.uniforms.uSaturation.value = adjustedUniforms.saturation.getPoint(progress).x;
-    mesh.current.material.uniforms.uShininess.value = adjustedUniforms.shininess.getPoint(progress).x;
     mesh.current.material.needsUpdate = true;
-
   });
 
   // Resize bubble resolution
@@ -591,6 +614,7 @@ const Bubble: FC<{
   return (
     <mesh ref={mesh} name={"bubble"}>
       <sphereGeometry args={[2.5, detail * bubbleDetailFactor[index], detail * bubbleDetailFactor[index]]} />
+      {/* <icosahedronGeometry args={[2.5, 5]} /> */}
       <shaderMaterial
         vertexShader={sphereVertexShader}
         fragmentShader={sphereFragmentShader}

@@ -49,7 +49,7 @@ const NavigationControls: FC<{
       ));
     }
     
-    if (pathname == '/partners') {
+    if (pathname == '/culture') {
       if ((window.innerHeight + Math.round(window.scrollY)) >= (mainRef.current?.offsetHeight??0)) {
         if (first && y > 0 && scrollHintBottom) {
           router.push('/contact', 
@@ -160,7 +160,7 @@ const NavigationControls: FC<{
     },
   });
 
-  return <main {...(COMING_SOON ? {} : bind())} className={`touch-pan-y absolute min-h-[100dvh] min-w-[100dvw] overscroll-none overflow-hidden ${(["/", "/contact", "/culture"].includes(pathname) || pathname.startsWith('/services'))  ? 'fullScreen mainWrapper' : 'mainWrapper'}`} ref={mainRef}>
+  return <main {...(COMING_SOON ? {} : bind())} className={`touch-pan-y absolute min-h-[100dvh] min-w-[100dvw] overscroll-none overflow-hidden ${(["/", "/contact", "/projects"].includes(pathname) || pathname.startsWith('/services'))  ? 'fullScreen mainWrapper' : 'mainWrapper'}`} ref={mainRef}>
     {children}
   </main>
 };

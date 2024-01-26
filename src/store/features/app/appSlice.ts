@@ -12,12 +12,14 @@ export interface MenuState {
   isMenuOpen: boolean;
   isScrolled: boolean;
   scrollHintBottom: boolean;
+  projectTab: 0 | 1 | 2 | 3;
 };
 
 const initialState: MenuState = {
   isMenuOpen: false,
   isScrolled: true,
   scrollHintBottom: false,
+  projectTab: 0
 };
 
 const appSlice = createSlice({
@@ -41,6 +43,9 @@ const appSlice = createSlice({
     },
     setScrolled: (state, {payload}: Action<boolean>) => {
       state.isScrolled = payload;
+    },
+    setProjectTab: (state, {payload}: Action<0|1|2|3>) => {
+      state.projectTab = payload;
     }
   }
 });
@@ -51,7 +56,8 @@ export const {
   togleMenu,
   setMenuOpen,
   setScrollBottomHint,
-  setScrolled
+  setScrolled,
+  setProjectTab
 } = appSlice.actions;
 
 export const selectApp = (state: AppState) => state.app;

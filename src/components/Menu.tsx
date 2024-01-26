@@ -41,12 +41,12 @@ const MenuDesktop = () => {
       </HeaderLink>
     </li>
     <li className="ml-14">
-      <HeaderLink boldHover={searchParams.has('boldhover')} active={pathname.startsWith('/culture')} href={searchParams.get('demo') ? ('/culture?' + createQueryString('demo', `${searchParams.get('demo')}`)) : "/culture"}>
+      <HeaderLink boldHover={searchParams.has('boldhover')} active={pathname.startsWith('/projects')} href={searchParams.get('demo') ? ('/projects?' + createQueryString('demo', `${searchParams.get('demo')}`)) : "/projects"}>
         Portfolio
       </HeaderLink>
     </li>
     <li className="ml-14">
-      <HeaderLink boldHover={searchParams.has('boldhover')} active={pathname.startsWith('/partners')} href={searchParams.get('demo') ? ('/partners?' + createQueryString('demo', `${searchParams.get('demo')}`)) : "/partners"}>
+      <HeaderLink boldHover={searchParams.has('boldhover')} active={pathname.startsWith('/culture')} href={searchParams.get('demo') ? ('/culture?' + createQueryString('demo', `${searchParams.get('demo')}`)) : "/culture"}>
         About Us
       </HeaderLink>
     </li>
@@ -166,8 +166,8 @@ const MenuMobile = () => {
             animate={isMenuOpen ? 'open' : 'closed'}
             transition={{delay: 0.1}}
           >
-            <NavLink href={searchParams.get('demo') ? ('/culture?' + createQueryString('demo', `${searchParams.get('demo')}`)) : '/culture'}>
-              Culture
+            <NavLink href={'/services'}>
+              Services
             </NavLink>
           </motion.li>
           <motion.li
@@ -175,8 +175,8 @@ const MenuMobile = () => {
             animate={isMenuOpen ? 'open' : 'closed'}
             transition={{delay: 0.2}}
           >
-            <NavLink href={searchParams.get('demo') ? ('/services?' + createQueryString('demo', `${searchParams.get('demo')}`)) : '/services'}>
-              Services
+            <NavLink href={'/projects'}>
+              Portfolio
             </NavLink>
           </motion.li>
           <motion.li
@@ -184,8 +184,8 @@ const MenuMobile = () => {
             animate={isMenuOpen ? 'open' : 'closed'}
             transition={{delay: 0.3}}
           >
-            <NavLink href={searchParams.get('demo') ? ('/partners?' + createQueryString('demo', `${searchParams.get('demo')}`)) : '/partners'}>
-              Partners
+            <NavLink href={searchParams.get('demo') ? ('/culture?' + createQueryString('demo', `${searchParams.get('demo')}`)) : '/culture'}>
+              Culture
             </NavLink>
           </motion.li>
           <motion.li

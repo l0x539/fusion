@@ -3,6 +3,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Jost, Montserrat, Space_Grotesk } from 'next/font/google'
 import localFont from 'next/font/local'
+import { Bounce, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -73,6 +75,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`touch-pan-y ${montserrat.variable} ${spaceGrotesk.variable} ${jost.variable} ${helvetica.variable} ${inter.variable}`}>
       <body className='touch-pan-y select-none font-main'>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          transition={Bounce}
+        />
         <Layout>
           {children}
         </Layout>

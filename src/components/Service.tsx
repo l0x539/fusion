@@ -52,33 +52,33 @@ const Carousel= () => {
   return (<>
     <div className="flex relative">
       <Pan current={0} selected={defaultSelected}>
-        <h3 className="text-3xl tablet:text-5xl text-white mb-6">Discovery</h3>
+        <h3 className="text-3xl tablet:text-5xl text-white mb-6">Explore</h3>
         <p className="tablet:w-96 text-base tablet:text-lg text-white mb-16">
-        The Discovery Phase is an awesome service that combines UX and tech research, prototype creation, and development roadmap - all to give your future MVP the best shot at success! Discover tech challenges early and get ready for smooth development! 
+          Embark on a journey of discovery with Fusion. Dive deep into innovative solutions, creative concepts, and cutting-edge technologies. Explore new possibilities and unlock the potential for your next project. Let Fusion guide you through the realms of creativity and innovation, shaping the future together.
         </p>
       </Pan>
       <Pan current={1} selected={defaultSelected}>
-        <h3 className="text-2xl tablet:text-4xl text-white mb-6">MVP Development</h3>
+        <h3 className="text-2xl tablet:text-4xl text-white mb-6">Prototype & Dev</h3>
         <p className="tablet:w-96 text-base tablet:text-lg text-white mb-16">
-        The Discovery Phase is an awesome service that combines UX and tech research, prototype creation, and development roadmap – all to give your future MVP the best shot at success! Discover tech challenges early and get ready for smooth development! 
+          Turn your vision into reality with Fusion{"'"}s Prototype & Development. From concept to creation, we craft robust prototypes, bringing ideas to life with attention to detail and advanced techniques. Partner with us to prototype, iterate, and refine projects to meet high standards.
         </p>
       </Pan>
       <Pan current={2} selected={defaultSelected}>
-        <h3 className="text-3xl tablet:text-5xl text-white mb-6">Product Team</h3>
+        <h3 className="text-3xl tablet:text-5xl text-white mb-6">Collab Solutions</h3>
         <p className="tablet:w-96 text-base tablet:text-lg text-white mb-16">
-        The Discovery Phase is an awesome service that combines UX and tech research, prototype creation, and development roadmap - all to give your future MVP the best shot at success! Discover tech challenges early and get ready for smooth development! 
+        Collaborative Solutions: Join forces for innovation and success. Fusion empowers teams to overcome challenges and achieve goals, from custom software to immersive experiences. Partner with us for exceptional results in innovation and growth.
         </p>
       </Pan>
       <Pan current={3} selected={defaultSelected}>
-        <h3 className="text-3xl tablet:text-5xl text-white mb-6">Product Design</h3>
+        <h3 className="text-3xl tablet:text-5xl text-white mb-6">Design Solutions</h3>
         <p className="tablet:w-96 text-base tablet:text-lg text-white mb-16">
-        The Discovery Phase is an awesome service that combines UX and tech research, prototype creation, and development roadmap - all to give your future MVP the best shot at success! Discover tech challenges early and get ready for smooth development! 
+        Our Design Solutions deliver innovative outcomes, combining user-centric design with cutting-edge aesthetics. From conceptualization to implementation, we craft engaging experiences that elevate your brand.
         </p>
       </Pan>
       <Pan current={4} selected={defaultSelected}>
         <h3 className="text-3xl tablet:text-5xl text-white mb-6">All services</h3>
         <p className="tablet:w-96 text-base tablet:text-lg text-white mb-16">
-        The Discovery Phase is an awesome service that combines UX and tech research, prototype creation, and development roadmap - all to give your future MVP the best shot at success! Discover tech challenges early and get ready for smooth development! 
+          Explore Fusion{"'"}s comprehensive suite of services, including design, development, branding, and more. Unlock the full potential of your project with our diverse expertise and tailored solutions.
         </p>
       </Pan>
     </div>
