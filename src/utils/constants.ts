@@ -2174,7 +2174,7 @@ export const mediaBreakPoints = {
 }
 
 export const progressSpeed = {
-  pointer: -.0025,
+  pointer: -.0025/20,
   wheel: 0.00004
 }
 
