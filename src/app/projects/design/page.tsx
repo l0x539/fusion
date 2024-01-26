@@ -33,13 +33,13 @@ export default function ProjectDetails() {
   return (
     <main className="w-screen h-screen">
       <Canvas camera={{ position: [0, 0, 20], fov: 15 }}>
-        <ScrollControls damping={0.2} pages={6} distance={0.5}>
+        <ScrollControls damping={0.2} pages={6} distance={2}>
           <Scroll>
             <Typography />
             <Images />
           </Scroll>
           <Scroll html>
-            <div className="text-xl md:text-3xl" style={{ transform: isMobile ? "translate3d(52vw, 180vh, 0)" : "translate3d(50vw, 150vh, 0)", color:"white" }}>
+            <div className="text-xl md:text-3xl" style={{ transform: isMobile ? "translate3d(52vw, 180vh, 0)" : isTablet ? "translate3d(58vw, 155vh, 0)" : "translate3d(52vw, 155vh, 0)", color:"white" }}>
               Craft a
               <br />
               compeling
