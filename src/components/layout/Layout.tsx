@@ -49,7 +49,7 @@ const PageContent: FC<{
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const controls = useMemo(() => searchParams.has('controls'), []);
+  const controls = useMemo(() => searchParams.has('controls'), [searchParams]);
 
   return <>
     <NavigationControls>     

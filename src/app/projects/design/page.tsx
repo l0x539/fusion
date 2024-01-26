@@ -69,8 +69,8 @@ function Images() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
 
-  const vec3Moto = useMemo(() => new Vector3(0.75, -height*3-(height*(1/aspect)*.08), 10.5), []);
-  const vec3Moto0 = useMemo(() => new Vector3(0, -height*3-(height*(1/aspect)*.08), 6.5), []);
+  const vec3Moto = useMemo(() => new Vector3(0.75, -height*3-(height*(1/aspect)*.08), 10.5), [aspect, height]);
+  const vec3Moto0 = useMemo(() => new Vector3(0, -height*3-(height*(1/aspect)*.08), 6.5), [aspect, height]);
   
   useFrame(() => {
     if (!group.current) return;
