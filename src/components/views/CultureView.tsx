@@ -4,7 +4,7 @@ import FooterContent from "../FooterContent";
 const CultureView = () => {
 
   return (<>
-      <div className="text-lg">
+      <div className="text-sm md:text-lg">
         <div className="absolute w-[100dvw] top-0 bottom-0 flex justify-center items-center">
           <p className="text-white mx-8 desktop:w-[50.375rem]">
           At Fusion, we{"'"}re a dynamic team of young, ambitious developers, and creative designers, hailing from Algeria. Passionate about technology and driven by innovation, we{"'"}re dedicated to pushing the boundaries of what{"'"}s possible in the digital landscape. Our diverse backgrounds and skill sets come together to form a powerhouse of creativity, expertise, and ingenuity. With a deep understanding of our clients{"'"} needs and a commitment to excellence, we strive to deliver cutting-edge solutions that elevate brands and businesses to new heights.
