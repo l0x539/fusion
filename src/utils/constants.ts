@@ -1843,7 +1843,7 @@ export const disabledPages = [
         color1: new Vector3().setFromColor(new Color('#D14CA6')),
         color2: new Vector3().setFromColor(new Color('#781671')),
         color3: new Vector3().setFromColor(new Color('#89B378')),
-        alpha: .6
+        alpha: .4
       },
       {
         color1: new Vector3().setFromColor(new Color('#FFF852')),
