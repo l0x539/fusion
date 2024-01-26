@@ -2,7 +2,7 @@ import { useTexture } from "@react-three/drei";
 import { Color, Vector3 } from "three";
 
 export const numberOfBubbles = 2;
-export const bubbleDetailFactor = [52, 24];
+export const bubbleDetailFactor = [32, 24];
 
 export const steps = [
   { // Index 1
