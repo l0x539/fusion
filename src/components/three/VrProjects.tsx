@@ -35,7 +35,7 @@ function JointCollider({ index, hand }: { index: number; hand: number }) {
   const { gl } = useThree();
   const handObj = (gl.xr as any).getHand(hand);
   const joint = handObj.joints[joints[index]] as any;
-  const size = joint.jointRadius ?? 0.0001;
+  const size = joint?.jointRadius ?? 0.0001;
   const [tipRef, api] = useSphere<Mesh>(() => ({
     args: [size],
     position: [-1, 0, 0],
