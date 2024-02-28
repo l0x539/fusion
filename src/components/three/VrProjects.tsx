@@ -37,7 +37,7 @@ function JointCollider({ index, hand }: { index: number; hand: number }) {
   const joint = handObj.joints[joints[index]] as any;
   const size = joint.jointRadius ?? 0.0001;
   const [tipRef, api] = useSphere<Mesh>(() => ({
-    args: size,
+    args: [size],
     position: [-1, 0, 0],
   }));
   useFrame(() => {
