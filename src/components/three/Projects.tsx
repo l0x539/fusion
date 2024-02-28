@@ -1,6 +1,6 @@
 "use client";
 import {
-  Image,
+  Image as FImage,
   Scroll,
   ScrollControls,
   useProgress,
@@ -13,8 +13,10 @@ import { motion as m } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import { animated } from "@react-spring/three";
 import Link from "next/link";
+import Image from "next/image";
 import { useAppDispatch } from "@/store/hooks";
 import { setProjectTab } from "@/store/features/app/appSlice";
+import VrIcon from "../VrIcon";
 
 const Projects = () => {
   const {progress} = useProgress();
@@ -37,11 +39,18 @@ const AllProjects = () => {
           <ProjectsList activeTab={activeTab} setActiveTab={setActiveTab} />
         </ScrollControls>
       </Canvas>
+      <div className="absolute bottom-0 left-0">
+        <Link href={'/projects/vr'}>
+          <div className="rounded-full bg-white hover:bg-[#57FF73] text-black hover:text-black p-1 mx-16 my-4 transition-all w-10">
+            <VrIcon />
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };
 
-const AnimatedImage = animated(Image)
+const AnimatedImage = animated(FImage)
 
 const ProjectsList: FC<{
   setActiveTab: (value: 0|1|2|3) => void;
@@ -120,7 +129,7 @@ const ProjectsList: FC<{
   return <>
     <Scroll>
       {/* 3D & VFX */}
-      <motion.group position={[-.5, 0, 0]} scale={0.85} animate={activeTab===0 ? "hover" : "rest"}
+      <motion.group position={[-.5, 0*0.1*height, 0]} scale={0.85} animate={activeTab===0 ? "hover" : "rest"}
         >
           <motion.group variants={{
               rest: {
@@ -132,7 +141,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .32,
             }}>
-            <AnimatedImage position={[-6, 1.5, -1]} scale={[4, 3]} url="/assets/images/nike.png" />
+            <AnimatedImage position={[-6, 1.5*0.1*height, -1]} scale={[4, 3]} url="/assets/images/nike.png" />
           </motion.group>
           <motion.group variants={{
               rest: {
@@ -144,7 +153,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .32,
             }}>
-              <AnimatedImage position={[-7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/vertex.png" />
+              <AnimatedImage position={[-7.625, 1*0.1*height, -2]} scale={[4, 3]}  url="/assets/images/vertex.png" />
             </motion.group>
             <motion.group variants={{
               rest: {
@@ -156,10 +165,10 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .32,
             }}>
-              <AnimatedImage position={[-9.25, .5, -3]} scale={[4, 3]} url="/assets/images/honey.png" />
+              <AnimatedImage position={[-9.25, .5*0.1*height, -3]} scale={[4, 3]} url="/assets/images/honey.png" />
             </motion.group>
         </motion.group>
-        <motion.group position={[.5, 0, 0]} scale={0.85} animate={activeTab===0 ? "hover" : "rest"}
+        <motion.group position={[.5, 0*0.1*height, 0]} scale={0.85} animate={activeTab===0 ? "hover" : "rest"}
         >
           <motion.group variants={{
               rest: {
@@ -171,7 +180,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .4,
             }}>
-            <AnimatedImage position={[6, 1.5, -1]} scale={[4, 3]} url="/assets/images/goli.png" />
+            <AnimatedImage position={[6, 1.5*0.1*height, -1]} scale={[4, 3]} url="/assets/images/goli.png" />
           </motion.group>
           <motion.group variants={{
               rest: {
@@ -183,7 +192,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .4,
             }}>
-              <AnimatedImage position={[7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/rifka.png" />
+              <AnimatedImage position={[7.625, 1*0.1*height, -2]} scale={[4, 3]}  url="/assets/images/rifka.png" />
             </motion.group>
             <motion.group variants={{
               rest: {
@@ -195,7 +204,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .4,
             }}>
-              <AnimatedImage position={[9.25, .5, -3]} scale={[4, 3]} url="/assets/images/nahla.png" />
+              <AnimatedImage position={[9.25, .5*0.1*height, -3]} scale={[4, 3]} url="/assets/images/nahla.png" />
             </motion.group>
         </motion.group>
         
@@ -212,7 +221,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .32,
             }}>
-            <AnimatedImage position={[-6, 1.5, -1]} scale={[4, 3]} url="/assets/images/scene.png" />
+            <AnimatedImage position={[-6, 1.5*0.1*height, -1]} scale={[4, 3]} url="/assets/images/scene.png" />
           </motion.group>
           <motion.group variants={{
               rest: {
@@ -224,7 +233,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .32,
             }}>
-              <AnimatedImage position={[-7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/exiade1.png" />
+              <AnimatedImage position={[-7.625, 1*0.1*height, -2]} scale={[4, 3]}  url="/assets/images/exiade1.png" />
             </motion.group>
             <motion.group variants={{
               rest: {
@@ -236,7 +245,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .32,
             }}>
-              <AnimatedImage position={[-9.25, .5, -3]} scale={[4, 3]} url="/assets/images/building.png" />
+              <AnimatedImage position={[-9.25, .5*0.1*height, -3]} scale={[4, 3]} url="/assets/images/building.png" />
             </motion.group>
         </motion.group>
         <motion.group position={[.5,  -height*.40, 0]} scale={0.85} animate={activeTab===1 ? "hover" : "rest"}
@@ -251,7 +260,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .4,
             }}>
-            <AnimatedImage position={[6, 1.5, -1]} scale={[4, 3]} url="/assets/images/nft.png" />
+            <AnimatedImage position={[6, 1.5*0.1*height, -1]} scale={[4, 3]} url="/assets/images/nft.png" />
           </motion.group>
           <motion.group variants={{
               rest: {
@@ -263,7 +272,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .4,
             }}>
-              <AnimatedImage position={[7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/grass.png" />
+              <AnimatedImage position={[7.625, 1*0.1*height, -2]} scale={[4, 3]}  url="/assets/images/grass.png" />
             </motion.group>
             <motion.group variants={{
               rest: {
@@ -275,7 +284,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .4,
             }}>
-              <AnimatedImage position={[9.25, .5, -3]} scale={[4, 3]} url="/assets/images/planet.png" />
+              <AnimatedImage position={[9.25, .5*0.1*height, -3]} scale={[4, 3]} url="/assets/images/planet.png" />
             </motion.group>
         </motion.group>
   
@@ -292,7 +301,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .32,
             }}>
-            <AnimatedImage position={[-6, 1.5, -1]} scale={[4, 3]} url="/assets/images/greek.gif" />
+            <AnimatedImage position={[-6, 1.5*0.1*height, -1]} scale={[4, 3]} url="/assets/images/greek.gif" />
           </motion.group>
           <motion.group variants={{
               rest: {
@@ -304,7 +313,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .32,
             }}>
-              <AnimatedImage position={[-7.625, 1, -2]} scale={[4, 3]}  url="/assets/images/design1.png" />
+              <AnimatedImage position={[-7.625, 1*0.1*height, -2]} scale={[4, 3]}  url="/assets/images/design1.png" />
             </motion.group>
             <motion.group variants={{
               rest: {
@@ -316,7 +325,7 @@ const ProjectsList: FC<{
             }} transition={{
               duration: .32,
             }}>
-              <AnimatedImage position={[-9.25, .5, -3]} scale={[4, 3]} url="/assets/images/disleey.png" />
+              <AnimatedImage position={[-9.25, .5*0.1*height, -3]} scale={[4, 3]} url="/assets/images/disleey.png" />
             </motion.group>
         </motion.group>
         <motion.group position={[.5, -height*.7, 0]} scale={0.85} animate={activeTab===2 ? "hover" : "rest"}
@@ -491,7 +500,7 @@ const Category: FC<{
   return (
     <div className="flex justify-between mb-0 md:mb-10">
       <div className=""></div>
-      <div className="group-hover mt-16 md:mt-28" onMouseEnter={() => {setActiveHover(true)}} onMouseLeave={() => {setActiveHover(false)}} onClick={() => {setProgress(index)}} >
+      <div className="group-hover mt-16 2xl:mt-28" onMouseEnter={() => {setActiveHover(true)}} onMouseLeave={() => {setActiveHover(false)}} onClick={() => {setProgress(index)}} >
         <Title color={color} title={title} active={active || activeHover} />
         <div className={`flex justify-center mt-6 ${(active || activeHover) ? 'text-white' : 'text-[#666]'}`}>
           {tags.map((tag, index) => <div key={index} className="flex py-2 px-4 justify-center items-center gap-2.5 bg-[#333] rounded-3xl">
