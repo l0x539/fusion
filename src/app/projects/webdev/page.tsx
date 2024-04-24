@@ -29,7 +29,7 @@ export default function ProjectDetails() {
   return (
     <main className="w-screen h-screen">
       <Canvas camera={{ position: [0, 0, 20], fov: 15 }}>
-        <ScrollControls damping={0.2} pages={6} distance={0.5}>
+        <ScrollControls damping={0.2} pages={6} distance={1.1}>
           <Scroll>
             <Typography />
             <Images />
@@ -94,7 +94,7 @@ function Images() {
       <mesh
         position={[0, -height * (5), 0]}
         >
-        <planeGeometry args={[1280*.002, 720*.002]} />
+        <planeGeometry args={[isMobile?1280*.002:width, isMobile?720*.002:height]} />
         <meshBasicMaterial map={nftTexture} toneMapped={false} />
       </mesh>
       {/* <Image

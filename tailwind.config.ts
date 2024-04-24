@@ -13,6 +13,7 @@ module.exports = {
   
         'desktop': '991px',
         // => @media (min-width: 1280px) { ... }
+        'smmax' : {'max': '767px'}, // => @media (max-width: 767px) { ... }
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -28,7 +29,7 @@ module.exports = {
         'web-yellow': '#FFF852',
         'design-blue': '#1B71F2',
         'uix-red': '#f50808',
-        'vfx-purple': '#6E3F52',
+        'vfx-purple': '#BCA2F2',
       },
       fontFamily: {
         main: ['var(--font-helvetica)', 'Helvetica', 'Raleway'],

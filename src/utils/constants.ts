@@ -2,7 +2,7 @@ import { useTexture } from "@react-three/drei";
 import { Color, Vector3 } from "three";
 
 export const numberOfBubbles = 2;
-export const bubbleDetailFactor = [52, 24];
+export const bubbleDetailFactor = [32, 24];
 
 export const steps = [
   { // Index 1
@@ -1283,7 +1283,7 @@ export const steps = [
       alpha: Math.random()*0.2
     },
     range: [0.475, 0.511],
-    stale: 0.497,
+    stale: 0.475 + (-0.475 + 0.511)*.3,
     path: '/services/our-method/5',
     bubbles: [
       {
@@ -1361,7 +1361,7 @@ export const steps = [
       alpha: 1
     },
     range: [0.578, 0.88],
-    stale: 0.771,
+    stale: 0.475 + (-0.475 + 0.511)*.3,
     path: '/services/our-method/5',
     bubbles: [
       {
@@ -1840,16 +1840,16 @@ export const disabledPages = [
     isProjects: true,
     projects: [
       {
-        color1: new Vector3().setFromColor(new Color('#D14CA6')),
-        color2: new Vector3().setFromColor(new Color('#781671')),
-        color3: new Vector3().setFromColor(new Color('#89B378')),
-        alpha: .6
+        color1: new Vector3().setFromColor(new Color('#822FE5')),
+        color2: new Vector3().setFromColor(new Color('#31222B')),
+        color3: new Vector3().setFromColor(new Color('#ABCC50')),
+        alpha: .4
       },
       {
         color1: new Vector3().setFromColor(new Color('#FFF852')),
         color2: new Vector3().setFromColor(new Color('#545428')),
         color3: new Vector3().setFromColor(new Color('#7a6c49')),
-        alpha: .4
+        alpha: .3
       },
       {
         color1: new Vector3().setFromColor(new Color('#514f79')),
@@ -2174,8 +2174,8 @@ export const mediaBreakPoints = {
 }
 
 export const progressSpeed = {
-  pointer: -.0025,
-  wheel: 0.00004
+  pointer: -.0025/20,
+  wheel: 0.00004*2
 }
 
 export const scrollLerp = 0.15;

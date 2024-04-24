@@ -161,7 +161,7 @@ const SpriteImage: FC<{
     if (!meshSprite.current) return;
     meshSprite.current?.material.color.setFromVector3(images[path].color.getPoint(progress));
     const opacity = images[path].opacity.getPoint(progress).x;
-    meshSprite.current.material.opacity = !isDisabledPage ? opacity : 0;
+    meshSprite.current.material.opacity = !isDisabledPage ? isMobile ? opacity*.5 : opacity : 0;
     meshSprite.current.visible = (opacity > 0.07) && !isMenuOpen && !disabledPages.some((p) => pathname.startsWith(p.path));
     meshSprite.current.position.lerp(images[path].position.getPoint(progress), searchParams.has('controls') ? lerpScroll : scrollLerp);
     meshSprite.current.rotation.setFromVector3(images[path].rotation.getPoint(progress));
@@ -612,8 +612,9 @@ const Bubble: FC<{
   }, [detail])
 
   return (
-    <mesh ref={mesh} name={"bubble"}>
-      <sphereGeometry args={[2.5, detail * bubbleDetailFactor[index], detail * bubbleDetailFactor[index]]} />
+    <mesh ref={mesh} name={"bubble"} rotation={[Math.PI/2,0,0]}>
+      {isMobile ? <icosahedronGeometry args={[2.5, 1]} />: <sphereGeometry args={[2.5, detail * bubbleDetailFactor[index], detail * bubbleDetailFactor[index]]} />}
+      {/* <sphereGeometry args={[2.5, detail * bubbleDetailFactor[index], detail * bubbleDetailFactor[index]]} /> */}
       {/* <icosahedronGeometry args={[2.5, 5]} /> */}
       <shaderMaterial
         vertexShader={sphereVertexShader}
