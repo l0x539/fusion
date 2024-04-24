@@ -13,6 +13,7 @@ module.exports = {
   
         'desktop': '991px',
         // => @media (min-width: 1280px) { ... }
+        'smmax' : {'max': '767px'}, // => @media (max-width: 767px) { ... }
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
