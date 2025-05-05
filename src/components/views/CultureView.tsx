@@ -18,16 +18,18 @@ const CultureView = () => {
             brands and businesses to new heights.
             <br />
             <br />
-            We blend creativity with technology to craft bespoke digital
-            experiences that captivate audiences and drive results. Our
-            collaborative approach ensures that every project is infused with
-            fresh perspectives, innovative ideas, and meticulous attention to
-            detail. We believe in transparency, communication, and
-            collaboration, working closely with our clients to bring their
-            visions to life. With a focus on quality, creativity, and client
-            satisfaction, we{"'"}re dedicated to making a lasting impact in the
-            digital world. Join us as we embark on this journey of creativity,
-            innovation, and growth.
+            <span className="smmax:hidden">
+              We blend creativity with technology to craft bespoke digital
+              experiences that captivate audiences and drive results. Our
+              collaborative approach ensures that every project is infused with
+              fresh perspectives, innovative ideas, and meticulous attention to
+              detail. We believe in transparency, communication, and
+              collaboration, working closely with our clients to bring their
+              visions to life. With a focus on quality, creativity, and client
+              satisfaction, we{"'"}re dedicated to making a lasting impact in
+              the digital world. Join us as we embark on this journey of
+              creativity, innovation, and growth.
+            </span>
           </p>
         </div>
         <FooterContent />
